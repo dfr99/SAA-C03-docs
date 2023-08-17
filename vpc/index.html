@@ -223,6 +223,30 @@
 
 
   <li class="md-tabs__item">
+    <a href="../cognito/" class="md-tabs__link">
+      Cognito
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../iam/" class="md-tabs__link">
+      IAM
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
     <a href="../s3/" class="md-tabs__link">
       S3
     </a>
@@ -311,6 +335,36 @@
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
         Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cognito/" class="md-nav__link">
+        Cognito
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iam/" class="md-nav__link">
+        IAM
       </a>
     </li>
   
@@ -519,9 +573,29 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#virtual-private-gateway-vpn-gateway" class="md-nav__link">
+    Virtual Private Gateway (VPN Gateway)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#nat-gateway" class="md-nav__link">
     NAT gateway
   </a>
+  
+    <nav class="md-nav" aria-label="NAT gateway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nat-instances-legacy" class="md-nav__link">
+    NAT Instances (legacy)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -573,13 +647,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#virtual-private-gateway-vpn-gateway" class="md-nav__link">
-    Virtual Private Gateway (VPN Gateway)
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -609,6 +676,7 @@
 
 
 <h1 id="vpc">VPC<a class="headerlink" href="#vpc" title="Permanent link">&para;</a></h1>
+<p>Virtual Private Cloud</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Logically isolated section of the AWS Cloud where you can launch AWS resources in a virtual network defined by you, giving you complete control over your virtual networking environment ("personal data center")</p>
 <h2 id="key-features">Key features<a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h2>
@@ -617,7 +685,9 @@
 <li>Each region comes with a default VPC</li>
 <li>200 subnets by VPC maximum</li>
 <li>VPC allows IPv4 and IPv6 CIDR Blocks (VPC address)</li>
+<li>DNS resolution enabled by default</li>
 <li>DNS hostnames to the instances (disabled by default)</li>
+<li>Default tenancy or dedicated one (dedicated host, more expensive)</li>
 </ul>
 <h3 id="pricing">Pricing<a class="headerlink" href="#pricing" title="Permanent link">&para;</a></h3>
 <ul>
@@ -661,6 +731,7 @@
 <li>EC2 instance which are security harden</li>
 <li>Used to access resources via SSH or RDP that are in a private subnet</li>
 <li>System Manager's Session Manager replaces the need for Bastions</li>
+<li><a href="https://aws.amazon.com/marketplace/pp/prodview-hl2sry7k37mgq">Guacamole Bastion Host</a></li>
 </ul>
 <h2 id="direct-connect">Direct Connect<a class="headerlink" href="#direct-connect" title="Permanent link">&para;</a></h2>
 <ul>
@@ -695,11 +766,52 @@
 </li>
 </ul>
 <h3 id="security-groups">Security Groups<a class="headerlink" href="#security-groups" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Instance-level virtual firewall that controls inbound and outbound traffic EC2 instances</li>
+<li>All traffic is blocked by default, rules only allow traffic.</li>
+<li>Protocol + Port Range + Source IP + Description (optional)</li>
+<li>Instances can belong to multiple Security Groups and Security Groupds can contain multiple EC2 instances</li>
+<li>Security group rules are permissive.</li>
+<li>Use case: allow a IP range, a specific IP, another security group...</li>
+<li>Stateful: if traffic is allowed inbound it is also allowed outbound</li>
+<li>Changes take effect immediately.</li>
+<li>You cannot block specific IP addresses (see <a href="#Network-Access-Control-List-(NACLs)">Network Access Control List (NACLs)</a></li>
+<li>Limitations: <ul>
+<li>Up to 1000 SGs per Region (default is 2500)</li>
+<li>60 inbounds and 60 outbound rules per SG</li>
+<li>16 SGs per Elastic Network interface (ENI, default is 5)</li>
+</ul>
+</li>
+</ul>
 <h3 id="subnets">Subnets<a class="headerlink" href="#subnets" title="Permanent link">&para;</a></h3>
+<p>Private by default (auto-assign public IPv4 address disabled)</p>
 <h4 id="public-subnet">Public subnet<a class="headerlink" href="#public-subnet" title="Permanent link">&para;</a></h4>
 <h4 id="private-subnet">Private subnet<a class="headerlink" href="#private-subnet" title="Permanent link">&para;</a></h4>
+<h3 id="virtual-private-gateway-vpn-gateway">Virtual Private Gateway (VPN Gateway)<a class="headerlink" href="#virtual-private-gateway-vpn-gateway" title="Permanent link">&para;</a></h3>
 <h3 id="nat-gateway">NAT gateway<a class="headerlink" href="#nat-gateway" title="Permanent link">&para;</a></h3>
 <ul>
+<li>NAT instances 100% managed by AWS</li>
+<li>Re-mapping one IP address space into another</li>
+<li>Use case: Give access to the internet to a Private Network (remap private IPs)</li>
+<li>Redundant instances within the selected AZ</li>
+<li>Automatically assigned with a public address</li>
+<li>Route tables for the NAT Gateway MUST be updated by administrator</li>
+<li>1 NAT gateway per AZ</li>
+<li>Starts at 5 Gbps and scales up to 45Gbps</li>
+</ul>
+<h4 id="nat-instances-legacy">NAT Instances (legacy)<a class="headerlink" href="#nat-instances-legacy" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Individual EC2 instance on public subnet to give access to the internet (MUST exist in a public subnet)</li>
+<li>MUST disable source and destination network checks</li>
+<li>MUST have a route out of the private subnet to the NAT instance</li>
+<li>NAT instance size determinet how much traffic can handle</li>
+<li>High availability can be achieved using:<ul>
+<li>Autoscaling Groups</li>
+<li>Multiple subnets in different AZs-</li>
+<li>Automatic failover</li>
+</ul>
+</li>
+<li>Community AMIs exist to launch NAT instances</li>
 <li>Should not be used as Bastions</li>
 </ul>
 <h3 id="vpc-endpoints">VPC Endpoints<a class="headerlink" href="#vpc-endpoints" title="Permanent link">&para;</a></h3>
@@ -744,11 +856,15 @@
 </ul>
 <h3 id="network-access-control-list-nacls">Network Access Control List (NACLs)<a class="headerlink" href="#network-access-control-list-nacls" title="Permanent link">&para;</a></h3>
 <ul>
+<li>VPCs are automatically given a default NACL which allows all outbound and inbound traffic</li>
 <li>Layer of security, acts like a firewall at subnet level</li>
-<li>Subnets an oly belong to a single NACL</li>
-<li>Seems like Linux iptables </li>
+<li>Denies all traffic by default</li>
+<li>Stateless: any allowed inbound traffic is also allowed outbound</li>
+<li>Subnets an only belong to a single NACL, but a same NACLs can be associated to multiple subnets</li>
+<li>Seems like Linux iptables, allowing or denying incoming and outcoming subnet traffic</li>
+<li>Rule number -&gt; evaluation order from lowest (0) to highest (32766). AWS recommends to work in 10 or 100 increments to deal with new rules addition.</li>
+<li>Use case: block by IP, additional protection in case Security Groups SSH port wass left open</li>
 </ul>
-<h3 id="virtual-private-gateway-vpn-gateway">Virtual Private Gateway (VPN Gateway)<a class="headerlink" href="#virtual-private-gateway-vpn-gateway" title="Permanent link">&para;</a></h3>
 
 
 
