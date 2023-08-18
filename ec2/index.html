@@ -8,18 +8,20 @@
       
       
       
-        <link rel="canonical" href="https://dfr99.github.io/SAA-C03-docs/vpc/">
+        <link rel="canonical" href="https://dfr99.github.io/SAA-C03-docs/ec2/">
       
       
-        <link rel="prev" href="../snowball/">
+        <link rel="prev" href="../cognito/">
       
+      
+        <link rel="next" href="../iam/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
-        <title>VPC - SAA-C03 Documentation</title>
+        <title>EC2 - SAA-C03 Documentation</title>
       
     
     
@@ -71,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vpc" class="md-skip">
+        <a href="#ec2" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              VPC
+              EC2
             
           </span>
         </div>
@@ -244,10 +246,12 @@
         
   
   
+    
+  
 
 
   <li class="md-tabs__item">
-    <a href="../ec2/" class="md-tabs__link">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
       EC2
     </a>
   </li>
@@ -304,12 +308,10 @@
         
   
   
-    
-  
 
 
   <li class="md-tabs__item">
-    <a href="./" class="md-tabs__link md-tabs__link--active">
+    <a href="../vpc/" class="md-tabs__link">
       VPC
     </a>
   </li>
@@ -412,11 +414,73 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../ec2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          EC2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         EC2
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instances-types" class="md-nav__link">
+    Instances Types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instances-sizes" class="md-nav__link">
+    Instances sizes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instace-profiles" class="md-nav__link">
+    Instace Profiles
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -487,256 +551,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          VPC
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../vpc/" class="md-nav__link">
         VPC
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    Overview
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-features" class="md-nav__link">
-    Key features
-  </a>
-  
-    <nav class="md-nav" aria-label="Key features">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pricing" class="md-nav__link">
-    Pricing
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#default-vpc" class="md-nav__link">
-    Default VPC
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#default-everywhere-ip-00000" class="md-nav__link">
-    Default Everywhere IP (0.0.0.0/0)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bastion-deprecated" class="md-nav__link">
-    Bastion (deprecated)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#direct-connect" class="md-nav__link">
-    Direct Connect
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#flow-logs" class="md-nav__link">
-    Flow Logs
-  </a>
-  
-    <nav class="md-nav" aria-label="Flow Logs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#log-breakdown" class="md-nav__link">
-    Log Breakdown
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#core-components" class="md-nav__link">
-    Core components
-  </a>
-  
-    <nav class="md-nav" aria-label="Core components">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#internet-gateway-igw" class="md-nav__link">
-    Internet Gateway (IGW)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#routing-tables" class="md-nav__link">
-    Routing tables
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#security-groups" class="md-nav__link">
-    Security Groups
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subnets" class="md-nav__link">
-    Subnets
-  </a>
-  
-    <nav class="md-nav" aria-label="Subnets">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#public-subnet" class="md-nav__link">
-    Public subnet
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#private-subnet" class="md-nav__link">
-    Private subnet
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#virtual-private-gateway-vpn-gateway" class="md-nav__link">
-    Virtual Private Gateway (VPN Gateway)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nat-gateway" class="md-nav__link">
-    NAT gateway
-  </a>
-  
-    <nav class="md-nav" aria-label="NAT gateway">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#nat-instances-legacy" class="md-nav__link">
-    NAT Instances (legacy)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vpc-endpoints" class="md-nav__link">
-    VPC Endpoints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#interface-endpoints" class="md-nav__link">
-    Interface Endpoints
-  </a>
-  
-    <nav class="md-nav" aria-label="Interface Endpoints">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pricing_1" class="md-nav__link">
-    Pricing
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gateway-endpoints" class="md-nav__link">
-    Gateway Endpoints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vpc-peering" class="md-nav__link">
-    VPC Peering
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#network-access-control-list-nacls" class="md-nav__link">
-    Network Access Control List (NACLs)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -756,195 +575,31 @@
                   
 
 
-<h1 id="vpc">VPC<a class="headerlink" href="#vpc" title="Permanent link">&para;</a></h1>
-<p>Virtual Private Cloud</p>
+<h1 id="ec2">EC2<a class="headerlink" href="#ec2" title="Permanent link">&para;</a></h1>
+<p>Elastic Compute Cloud</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Logically isolated section of the AWS Cloud where you can launch AWS resources in a virtual network defined by you, giving you complete control over your virtual networking environment ("personal data center")</p>
-<h2 id="key-features">Key features<a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Region specific, 5 VPCs per region maximum</li>
-<li>Each region comes with a default VPC</li>
-<li>200 subnets by VPC maximum</li>
-<li>VPC allows IPv4 and IPv6 CIDR Blocks (VPC address)</li>
-<li>DNS resolution enabled by default</li>
-<li>DNS hostnames to the instances (disabled by default)</li>
-<li>Default tenancy or dedicated one (dedicated host, more expensive)</li>
+<li>Highly configurable server</li>
+<li>Flexible, it is resizable compute capacity</li>
+<li><strong>Anything and everything on AWS uses EC2 Instances underneath</strong></li>
 </ul>
-<h3 id="pricing">Pricing<a class="headerlink" href="#pricing" title="Permanent link">&para;</a></h3>
+<h2 id="instances-types">Instances Types<a class="headerlink" href="#instances-types" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Free:<ul>
-<li>VPCs</li>
-<li>Route tables</li>
-<li>NACLs</li>
-<li>IGWs</li>
-<li>SGs</li>
-<li>Subnets</li>
-<li>VPC Peering</li>
+<li>General purpose: T3, M5; balance of compute, memory and networking resources</li>
+<li>Compute Optimized: C5, C5n; high performance processor</li>
+<li>Memory Optimized: R5, R5a, X1; fast performance for workloads that process large data sets in memory</li>
+<li>Accelerated Optimized: P3, G3, F1; hardware accelerators, co-processors</li>
+<li>Storage Optimized: I3, D2, H1; high, sequential read and write access to very large data sets in local storage</li>
 </ul>
-</li>
-<li>Costs:<ul>
-<li>NAT Gateways</li>
-<li>VPC Endpoints</li>
-<li>VPN Gateway</li>
-<li>Customer Gateway</li>
-</ul>
-</li>
-</ul>
-<h2 id="default-vpc">Default VPC<a class="headerlink" href="#default-vpc" title="Permanent link">&para;</a></h2>
+<h2 id="instances-sizes">Instances sizes<a class="headerlink" href="#instances-sizes" title="Permanent link">&para;</a></h2>
 <ul>
-<li>The goal is allow you to deploy instances immediately.</li>
-<li>IPv4 CIDR block -&gt; 172.31.0.0/16</li>
-<li>/20-sized subnet for each Availability Zone (AZ)</li>
-<li>IGW</li>
-<li>Default SG</li>
-<li>Default NACL</li>
-<li>Default DHCP options set for yout AWS account with your default VPC</li>
-<li>Default route table</li>
+<li>Sizes generally doble in pric and key attributes</li>
+<li>To upgrade or downgrade just up or down to the next size, respectively</li>
 </ul>
-<h2 id="default-everywhere-ip-00000">Default Everywhere IP (0.0.0.0/0)<a class="headerlink" href="#default-everywhere-ip-00000" title="Permanent link">&para;</a></h2>
+<h2 id="instace-profiles">Instace Profiles<a class="headerlink" href="#instace-profiles" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Represents all possible IP addresses</li>
-<li>In a IGW route table -&gt; allow all internet access</li>
-<li>In a SG inbound rule -&gt; allow all traffic from internet to our resources</li>
-</ul>
-<h2 id="bastion-deprecated">Bastion (deprecated)<a class="headerlink" href="#bastion-deprecated" title="Permanent link">&para;</a></h2>
-<ul>
-<li>EC2 instance which are security harden</li>
-<li>Used to access resources via SSH or RDP that are in a private subnet</li>
-<li>System Manager's Session Manager replaces the need for Bastions</li>
-<li><a href="https://aws.amazon.com/marketplace/pp/prodview-hl2sry7k37mgq">Guacamole Bastion Host</a></li>
-</ul>
-<h2 id="direct-connect">Direct Connect<a class="headerlink" href="#direct-connect" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Dedicated network connections from on-premises to AWS</li>
-<li>Very fast network (from 50Mbps to 100Gbps)</li>
-<li>Great for high traffic networks. Reliable and secure</li>
-</ul>
-<h2 id="flow-logs">Flow Logs<a class="headerlink" href="#flow-logs" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Allow to capture traffic information in-and-out of network interfaces within your VPC</li>
-<li>Created for VPC, subnets and network interfaces</li>
-<li>Log data is stores in CloudWatch Logs, where it can be viewed in detail</li>
-</ul>
-<h3 id="log-breakdown">Log Breakdown<a class="headerlink" href="#log-breakdown" title="Permanent link">&para;</a></h3>
-<p><img alt="Log Breakdown" src="../images/vpc/vpc_2.png" />
-<img alt="Flow Logs CheatSheet" src="../images/vpc/vpc_3.png" /></p>
-<h2 id="core-components">Core components<a class="headerlink" href="#core-components" title="Permanent link">&para;</a></h2>
-<p>Combining these components and services is what makes up your VPC</p>
-<h3 id="internet-gateway-igw">Internet Gateway (IGW)<a class="headerlink" href="#internet-gateway-igw" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Allows VPCs to access to the internet</li>
-<li>Provides a target in VPC route tables for internet-routable traffic</li>
-<li>Perform NAT for instances that have been assigned public IPv4 addresses</li>
-<li>It is required to add a route to the IGW and set the destination to be the default Everywhere IP (0.0.0.0/0)</li>
-</ul>
-<h3 id="routing-tables">Routing tables<a class="headerlink" href="#routing-tables" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Used to determine where network traffic is directed</li>
-<li>Each subent in your VPC <strong>MUST</strong> be associated with a route table and <strong>JUST</strong> one<ul>
-<li>But multiple subnets can be associated with one single route table</li>
-</ul>
-</li>
-</ul>
-<h3 id="security-groups">Security Groups<a class="headerlink" href="#security-groups" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Instance-level virtual firewall that controls inbound and outbound traffic EC2 instances</li>
-<li>All traffic is blocked by default, rules only allow traffic.</li>
-<li>Protocol + Port Range + Source IP + Description (optional)</li>
-<li>Instances can belong to multiple Security Groups and Security Groupds can contain multiple EC2 instances</li>
-<li>Security group rules are permissive.</li>
-<li>Use case: allow a IP range, a specific IP, another security group...</li>
-<li>Stateful: if traffic is allowed inbound it is also allowed outbound</li>
-<li>Changes take effect immediately.</li>
-<li>You cannot block specific IP addresses (see <a href="#Network-Access-Control-List-(NACLs)">Network Access Control List (NACLs)</a></li>
-<li>Limitations: <ul>
-<li>Up to 1000 SGs per Region (default is 2500)</li>
-<li>60 inbounds and 60 outbound rules per SG</li>
-<li>16 SGs per Elastic Network interface (ENI, default is 5)</li>
-</ul>
-</li>
-</ul>
-<h3 id="subnets">Subnets<a class="headerlink" href="#subnets" title="Permanent link">&para;</a></h3>
-<p>Private by default (auto-assign public IPv4 address disabled)</p>
-<h4 id="public-subnet">Public subnet<a class="headerlink" href="#public-subnet" title="Permanent link">&para;</a></h4>
-<h4 id="private-subnet">Private subnet<a class="headerlink" href="#private-subnet" title="Permanent link">&para;</a></h4>
-<h3 id="virtual-private-gateway-vpn-gateway">Virtual Private Gateway (VPN Gateway)<a class="headerlink" href="#virtual-private-gateway-vpn-gateway" title="Permanent link">&para;</a></h3>
-<h3 id="nat-gateway">NAT gateway<a class="headerlink" href="#nat-gateway" title="Permanent link">&para;</a></h3>
-<ul>
-<li>NAT instances 100% managed by AWS</li>
-<li>Re-mapping one IP address space into another</li>
-<li>Use case: Give access to the internet to a Private Network (remap private IPs)</li>
-<li>Redundant instances within the selected AZ</li>
-<li>Automatically assigned with a public address</li>
-<li>Route tables for the NAT Gateway MUST be updated by administrator</li>
-<li>1 NAT gateway per AZ</li>
-<li>Starts at 5 Gbps and scales up to 45Gbps</li>
-</ul>
-<h4 id="nat-instances-legacy">NAT Instances (legacy)<a class="headerlink" href="#nat-instances-legacy" title="Permanent link">&para;</a></h4>
-<ul>
-<li>Individual EC2 instance on public subnet to give access to the internet (MUST exist in a public subnet)</li>
-<li>MUST disable source and destination network checks</li>
-<li>MUST have a route out of the private subnet to the NAT instance</li>
-<li>NAT instance size determinet how much traffic can handle</li>
-<li>High availability can be achieved using:<ul>
-<li>Autoscaling Groups</li>
-<li>Multiple subnets in different AZs-</li>
-<li>Automatic failover</li>
-</ul>
-</li>
-<li>Community AMIs exist to launch NAT instances</li>
-<li>Should not be used as Bastions</li>
-</ul>
-<h3 id="vpc-endpoints">VPC Endpoints<a class="headerlink" href="#vpc-endpoints" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Allows you to privately connect VPC with other AWS services<ul>
-<li>Instances in the VPC do not require a public IP address to communicate with service resources</li>
-<li>Traffic between your VPC and other services does not leave the AWS network</li>
-<li>Allow reliable and secure communication between services and instances</li>
-</ul>
-</li>
-<li>Horizontally scalled, redundant and highly available VPC component</li>
-<li>2 types: Interface Endpoints and Gateway Endpoints</li>
-</ul>
-<h3 id="interface-endpoints">Interface Endpoints<a class="headerlink" href="#interface-endpoints" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Elastic Network Interfaces (ENI) with private IP address</li>
-<li>Uses AWS PowerLink</li>
-<li>Supports multiple services</li>
-</ul>
-<h4 id="pricing_1">Pricing<a class="headerlink" href="#pricing_1" title="Permanent link">&para;</a></h4>
-<ul>
-<li>Internet endpoint per AZ ($/hour): 0.01 -&gt; 24/7 ~7.5$</li>
-<li>0.01$/GB data processed</li>
-</ul>
-<h3 id="gateway-endpoints">Gateway Endpoints<a class="headerlink" href="#gateway-endpoints" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Gateway that is a target for a specific route in yout route table.</li>
-<li>It is FREE</li>
-<li>Only support S3 and DynamoDB</li>
-</ul>
-<p><img alt="VPC Endpoints CheatSheet" src="../images/vpc/vpc.png" /></p>
-<h3 id="vpc-peering">VPC Peering<a class="headerlink" href="#vpc-peering" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Allows you to connect VPC between them over a direct network route using private IP addresses</li>
-<li>Instances on peered VPC behave just like they are on the same network</li>
-<li>Connects VPCS same or differents AWS accounts and/or regions</li>
-<li>Star configuration: 1 central VPC, the rest around the central one<ul>
-<li>No Transitive Peering -&gt; One to One to connect immediate VPC</li>
-</ul>
-</li>
-<li>No Overlapping CIDR Blocks</li>
-</ul>
-<h3 id="network-access-control-list-nacls">Network Access Control List (NACLs)<a class="headerlink" href="#network-access-control-list-nacls" title="Permanent link">&para;</a></h3>
-<ul>
-<li>VPCs are automatically given a default NACL which allows all outbound and inbound traffic</li>
-<li>Layer of security, acts like a firewall at subnet level</li>
-<li>Denies all traffic by default</li>
-<li>Stateless: any allowed inbound traffic is also allowed outbound</li>
-<li>Subnets an only belong to a single NACL, but a same NACLs can be associated to multiple subnets</li>
-<li>Seems like Linux iptables, allowing or denying incoming and outcoming subnet traffic</li>
-<li>Rule number -&gt; evaluation order from lowest (0) to highest (32766). AWS recommends to work in 10 or 100 increments to deal with new rules addition.</li>
-<li>Use case: block by IP, additional protection in case Security Groups SSH port wass left open</li>
+<li>Attach a role to an Instance to give it acces to AWS Resources without embedding AWS credentials directly (not recommendend, avoid this practice)</li>
+<li>Reference to a IAM role</li>
 </ul>
 
 

@@ -8,18 +8,20 @@
       
       
       
-        <link rel="canonical" href="https://dfr99.github.io/SAA-C03-docs/vpc/">
+        <link rel="canonical" href="https://dfr99.github.io/SAA-C03-docs/route53/">
       
       
-        <link rel="prev" href="../snowball/">
+        <link rel="prev" href="../iam/">
       
+      
+        <link rel="next" href="../s3/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
-        <title>VPC - SAA-C03 Documentation</title>
+        <title>Route53 - SAA-C03 Documentation</title>
       
     
     
@@ -71,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vpc" class="md-skip">
+        <a href="#route53" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              VPC
+              Route53
             
           </span>
         </div>
@@ -268,10 +270,12 @@
         
   
   
+    
+  
 
 
   <li class="md-tabs__item">
-    <a href="../route53/" class="md-tabs__link">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
       Route53
     </a>
   </li>
@@ -304,12 +308,10 @@
         
   
   
-    
-  
 
 
   <li class="md-tabs__item">
-    <a href="./" class="md-tabs__link md-tabs__link--active">
+    <a href="../vpc/" class="md-tabs__link">
       VPC
     </a>
   </li>
@@ -442,11 +444,181 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../route53/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Route53
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Route53
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-ip" class="md-nav__link">
+    Introduction to IP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-dns" class="md-nav__link">
+    Introduction to DNS
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to DNS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#domain-registrers" class="md-nav__link">
+    Domain registrers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-level-domains" class="md-nav__link">
+    Top-level domains
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-of-authority-soa" class="md-nav__link">
+    Start of Authority (SOA)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#address-a-records" class="md-nav__link">
+    Address (A) Records
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canonical-names-cname-records" class="md-nav__link">
+    Canonical Names (CNAME) Records
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name-server-ns-records" class="md-nav__link">
+    Name Server (NS) Records
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-to-live-ttl" class="md-nav__link">
+    Time to Live (TTL)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-route53" class="md-nav__link">
+    Introduction to Route53
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to Route53">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#record-sets" class="md-nav__link">
+    Record Sets
+  </a>
+  
+    <nav class="md-nav" aria-label="Record Sets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alias-record" class="md-nav__link">
+    Alias Record
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-policies" class="md-nav__link">
+    Routing policies
+  </a>
+  
+    <nav class="md-nav" aria-label="Routing policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#traffic-flow" class="md-nav__link">
+    Traffic flow
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#health-checks" class="md-nav__link">
+    Health Checks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolver" class="md-nav__link">
+    Resolver
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -487,256 +659,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          VPC
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../vpc/" class="md-nav__link">
         VPC
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    Overview
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-features" class="md-nav__link">
-    Key features
-  </a>
-  
-    <nav class="md-nav" aria-label="Key features">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pricing" class="md-nav__link">
-    Pricing
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#default-vpc" class="md-nav__link">
-    Default VPC
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#default-everywhere-ip-00000" class="md-nav__link">
-    Default Everywhere IP (0.0.0.0/0)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bastion-deprecated" class="md-nav__link">
-    Bastion (deprecated)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#direct-connect" class="md-nav__link">
-    Direct Connect
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#flow-logs" class="md-nav__link">
-    Flow Logs
-  </a>
-  
-    <nav class="md-nav" aria-label="Flow Logs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#log-breakdown" class="md-nav__link">
-    Log Breakdown
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#core-components" class="md-nav__link">
-    Core components
-  </a>
-  
-    <nav class="md-nav" aria-label="Core components">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#internet-gateway-igw" class="md-nav__link">
-    Internet Gateway (IGW)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#routing-tables" class="md-nav__link">
-    Routing tables
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#security-groups" class="md-nav__link">
-    Security Groups
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subnets" class="md-nav__link">
-    Subnets
-  </a>
-  
-    <nav class="md-nav" aria-label="Subnets">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#public-subnet" class="md-nav__link">
-    Public subnet
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#private-subnet" class="md-nav__link">
-    Private subnet
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#virtual-private-gateway-vpn-gateway" class="md-nav__link">
-    Virtual Private Gateway (VPN Gateway)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nat-gateway" class="md-nav__link">
-    NAT gateway
-  </a>
-  
-    <nav class="md-nav" aria-label="NAT gateway">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#nat-instances-legacy" class="md-nav__link">
-    NAT Instances (legacy)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vpc-endpoints" class="md-nav__link">
-    VPC Endpoints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#interface-endpoints" class="md-nav__link">
-    Interface Endpoints
-  </a>
-  
-    <nav class="md-nav" aria-label="Interface Endpoints">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pricing_1" class="md-nav__link">
-    Pricing
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gateway-endpoints" class="md-nav__link">
-    Gateway Endpoints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vpc-peering" class="md-nav__link">
-    VPC Peering
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#network-access-control-list-nacls" class="md-nav__link">
-    Network Access Control List (NACLs)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -756,196 +683,116 @@
                   
 
 
-<h1 id="vpc">VPC<a class="headerlink" href="#vpc" title="Permanent link">&para;</a></h1>
-<p>Virtual Private Cloud</p>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Logically isolated section of the AWS Cloud where you can launch AWS resources in a virtual network defined by you, giving you complete control over your virtual networking environment ("personal data center")</p>
-<h2 id="key-features">Key features<a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h2>
+<h1 id="route53">Route53<a class="headerlink" href="#route53" title="Permanent link">&para;</a></h1>
+<h2 id="introduction-to-ip">Introduction to IP<a class="headerlink" href="#introduction-to-ip" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Region specific, 5 VPCs per region maximum</li>
-<li>Each region comes with a default VPC</li>
-<li>200 subnets by VPC maximum</li>
-<li>VPC allows IPv4 and IPv6 CIDR Blocks (VPC address)</li>
-<li>DNS resolution enabled by default</li>
-<li>DNS hostnames to the instances (disabled by default)</li>
-<li>Default tenancy or dedicated one (dedicated host, more expensive)</li>
-</ul>
-<h3 id="pricing">Pricing<a class="headerlink" href="#pricing" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Free:<ul>
-<li>VPCs</li>
-<li>Route tables</li>
-<li>NACLs</li>
-<li>IGWs</li>
-<li>SGs</li>
-<li>Subnets</li>
-<li>VPC Peering</li>
-</ul>
-</li>
-<li>Costs:<ul>
-<li>NAT Gateways</li>
-<li>VPC Endpoints</li>
-<li>VPN Gateway</li>
-<li>Customer Gateway</li>
+<li>Internet Protocol</li>
+<li>IP Addresses: computer identifier on a network, allows communication with it using the Internet Protocol</li>
+<li>Two versions:<ul>
+<li>IPv4: 32-bit address space</li>
+<li>IPv6: 128-bit address space</li>
 </ul>
 </li>
 </ul>
-<h2 id="default-vpc">Default VPC<a class="headerlink" href="#default-vpc" title="Permanent link">&para;</a></h2>
+<h2 id="introduction-to-dns">Introduction to DNS<a class="headerlink" href="#introduction-to-dns" title="Permanent link">&para;</a></h2>
 <ul>
-<li>The goal is allow you to deploy instances immediately.</li>
-<li>IPv4 CIDR block -&gt; 172.31.0.0/16</li>
-<li>/20-sized subnet for each Availability Zone (AZ)</li>
-<li>IGW</li>
-<li>Default SG</li>
-<li>Default NACL</li>
-<li>Default DHCP options set for yout AWS account with your default VPC</li>
-<li>Default route table</li>
+<li>Domain Name Service</li>
+<li>Translates domain names to IP addresses</li>
+<li>Find specific servers on the Internet depending what domain name you browse</li>
 </ul>
-<h2 id="default-everywhere-ip-00000">Default Everywhere IP (0.0.0.0/0)<a class="headerlink" href="#default-everywhere-ip-00000" title="Permanent link">&para;</a></h2>
+<h3 id="domain-registrers">Domain registrers<a class="headerlink" href="#domain-registrers" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Represents all possible IP addresses</li>
-<li>In a IGW route table -&gt; allow all internet access</li>
-<li>In a SG inbound rule -&gt; allow all traffic from internet to our resources</li>
+<li>Authorities who have the ability to assign domain names under on or more <a href="#top-level-domains">top-level domains</a></li>
+<li>Domain get registered through InterNIC, service provided by the Internet Corporation for Assigned Names and Numbers (ICANN), enforcing the uniqueness of domain names all over the internet.</li>
 </ul>
-<h2 id="bastion-deprecated">Bastion (deprecated)<a class="headerlink" href="#bastion-deprecated" title="Permanent link">&para;</a></h2>
+<h3 id="top-level-domains">Top-level domains<a class="headerlink" href="#top-level-domains" title="Permanent link">&para;</a></h3>
 <ul>
-<li>EC2 instance which are security harden</li>
-<li>Used to access resources via SSH or RDP that are in a private subnet</li>
-<li>System Manager's Session Manager replaces the need for Bastions</li>
-<li><a href="https://aws.amazon.com/marketplace/pp/prodview-hl2sry7k37mgq">Guacamole Bastion Host</a></li>
+<li>Last word within a domain represents the <strong>top-level</strong> domain name</li>
+<li>The second word within a domain name is know as the <strong>second-level</strong> domain name</li>
+<li>Controlled by the Internet Assigned Numbers Authority (IANA)</li>
+<li>AWS has their own top level domain: <strong>.aws</strong></li>
 </ul>
-<h2 id="direct-connect">Direct Connect<a class="headerlink" href="#direct-connect" title="Permanent link">&para;</a></h2>
+<h3 id="start-of-authority-soa">Start of Authority (SOA)<a class="headerlink" href="#start-of-authority-soa" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Dedicated network connections from on-premises to AWS</li>
-<li>Very fast network (from 50Mbps to 100Gbps)</li>
-<li>Great for high traffic networks. Reliable and secure</li>
+<li>SOA record stores information about the domain</li>
+<li>A Zone file can contain only one SOA Record</li>
 </ul>
-<h2 id="flow-logs">Flow Logs<a class="headerlink" href="#flow-logs" title="Permanent link">&para;</a></h2>
+<p><img alt="SOA record structure" src="../images/route53/route53.png" /></p>
+<h3 id="address-a-records">Address (A) Records<a class="headerlink" href="#address-a-records" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Allow to capture traffic information in-and-out of network interfaces within your VPC</li>
-<li>Created for VPC, subnets and network interfaces</li>
-<li>Log data is stores in CloudWatch Logs, where it can be viewed in detail</li>
+<li>Allows you to convert the name of a domain directly into an IP Address</li>
 </ul>
-<h3 id="log-breakdown">Log Breakdown<a class="headerlink" href="#log-breakdown" title="Permanent link">&para;</a></h3>
-<p><img alt="Log Breakdown" src="../images/vpc/vpc_2.png" />
-<img alt="Flow Logs CheatSheet" src="../images/vpc/vpc_3.png" /></p>
-<h2 id="core-components">Core components<a class="headerlink" href="#core-components" title="Permanent link">&para;</a></h2>
-<p>Combining these components and services is what makes up your VPC</p>
-<h3 id="internet-gateway-igw">Internet Gateway (IGW)<a class="headerlink" href="#internet-gateway-igw" title="Permanent link">&para;</a></h3>
+<h3 id="canonical-names-cname-records">Canonical Names (CNAME) Records<a class="headerlink" href="#canonical-names-cname-records" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Allows VPCs to access to the internet</li>
-<li>Provides a target in VPC route tables for internet-routable traffic</li>
-<li>Perform NAT for instances that have been assigned public IPv4 addresses</li>
-<li>It is required to add a route to the IGW and set the destination to be the default Everywhere IP (0.0.0.0/0)</li>
+<li>Used to resolve one domain name to another rather than an IP address</li>
+<li>Useful when you work with dynamic IPs</li>
 </ul>
-<h3 id="routing-tables">Routing tables<a class="headerlink" href="#routing-tables" title="Permanent link">&para;</a></h3>
+<h3 id="name-server-ns-records">Name Server (NS) Records<a class="headerlink" href="#name-server-ns-records" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Used to determine where network traffic is directed</li>
-<li>Each subent in your VPC <strong>MUST</strong> be associated with a route table and <strong>JUST</strong> one<ul>
-<li>But multiple subnets can be associated with one single route table</li>
+<li>Used by top-level domain servers to direct traffic to the DNS server containing the authoritative DNS records.</li>
+<li>Multiple name servers can be provided for redundancy</li>
+<li>In AWS NS records would be pointed at the AWS servers</li>
+</ul>
+<h3 id="time-to-live-ttl">Time to Live (TTL)<a class="headerlink" href="#time-to-live-ttl" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Lenght of time that a DNS record gets cached on the resolving server</li>
+<li>The lower the TTL, the faster that changes to DNS records will propagate across the Internet</li>
+<li>Measured in seconds under IPv4</li>
+</ul>
+<p><img alt="DNS CheatSheet" src="../images/route53/route53_2.png" /></p>
+<h2 id="introduction-to-route53">Introduction to Route53<a class="headerlink" href="#introduction-to-route53" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Highly available and scalable cloud DNS, integrated with AWS Services</li>
+<li>Functionalities:<ul>
+<li>Register and manage domains</li>
+<li>Create DNS routing rules</li>
+<li>Implement complex traffic flows</li>
+<li>Resolve VPCs outside AWS</li>
+<li>Monitoring DNS records</li>
+</ul>
+</li>
+<li>Use case: get custom domain to point to your AWS Resources</li>
+</ul>
+<h3 id="record-sets">Record Sets<a class="headerlink" href="#record-sets" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Create record sets to point naked domain and subdomains via domain records</li>
+</ul>
+<h4 id="alias-record">Alias Record<a class="headerlink" href="#alias-record" title="Permanent link">&para;</a></h4>
+<ul>
+<li>AWS own special record to extend DNS functionality, allowing to detect IP changes and continuously pointing that endpoint to the correct resource</li>
+<li>Useful whe routing traffic to AWS resources</li>
+</ul>
+<h3 id="routing-policies">Routing policies<a class="headerlink" href="#routing-policies" title="Permanent link">&para;</a></h3>
+<ul>
+<li>7 different types available:<ul>
+<li>Simple (default): 1 record, 1 or more IP addresses. Return IPs to the user in a random user</li>
+<li>Weighted: split traffic based on weights (traffic percentage), balancing the traffic through the different servers</li>
+<li>Latency-based: direct traffic based on the lowst network latency possible for the end-user based on region. Requires a latency resource record</li>
+<li>Failover: active/passive setups in situations where you want a primary site in one location and a secondary data recovery site in another. Monitor health-checks from primary site to determinate where to direct traffic</li>
+<li>Geolocation: direct traffic based on the geographic location of the origin of the request</li>
+<li>Geo-proximity: direct traffic based on the geographic location of users and AWS resources. Can route more or less traffic to a specific resource using a <em>Bias</em> value. You <strong>MUST</strong> use <a href="#traffic-flow">Route53 Traffic Flow</a> in order to use it (select regions and visualize the bias)</li>
+<li>Multi-value: let you configure Route53 to return multiple values such as IP addresses for your web-servers, in response to DNS queries</li>
 </ul>
 </li>
 </ul>
-<h3 id="security-groups">Security Groups<a class="headerlink" href="#security-groups" title="Permanent link">&para;</a></h3>
+<h4 id="traffic-flow">Traffic flow<a class="headerlink" href="#traffic-flow" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Instance-level virtual firewall that controls inbound and outbound traffic EC2 instances</li>
-<li>All traffic is blocked by default, rules only allow traffic.</li>
-<li>Protocol + Port Range + Source IP + Description (optional)</li>
-<li>Instances can belong to multiple Security Groups and Security Groupds can contain multiple EC2 instances</li>
-<li>Security group rules are permissive.</li>
-<li>Use case: allow a IP range, a specific IP, another security group...</li>
-<li>Stateful: if traffic is allowed inbound it is also allowed outbound</li>
-<li>Changes take effect immediately.</li>
-<li>You cannot block specific IP addresses (see <a href="#Network-Access-Control-List-(NACLs)">Network Access Control List (NACLs)</a></li>
-<li>Limitations: <ul>
-<li>Up to 1000 SGs per Region (default is 2500)</li>
-<li>60 inbounds and 60 outbound rules per SG</li>
-<li>16 SGs per Elastic Network interface (ENI, default is 5)</li>
+<li>Visual editor that let you create routing configurations for your resources</li>
+<li>Support versioning</li>
 </ul>
-</li>
-</ul>
-<h3 id="subnets">Subnets<a class="headerlink" href="#subnets" title="Permanent link">&para;</a></h3>
-<p>Private by default (auto-assign public IPv4 address disabled)</p>
-<h4 id="public-subnet">Public subnet<a class="headerlink" href="#public-subnet" title="Permanent link">&para;</a></h4>
-<h4 id="private-subnet">Private subnet<a class="headerlink" href="#private-subnet" title="Permanent link">&para;</a></h4>
-<h3 id="virtual-private-gateway-vpn-gateway">Virtual Private Gateway (VPN Gateway)<a class="headerlink" href="#virtual-private-gateway-vpn-gateway" title="Permanent link">&para;</a></h3>
-<h3 id="nat-gateway">NAT gateway<a class="headerlink" href="#nat-gateway" title="Permanent link">&para;</a></h3>
+<h3 id="health-checks">Health Checks<a class="headerlink" href="#health-checks" title="Permanent link">&para;</a></h3>
 <ul>
-<li>NAT instances 100% managed by AWS</li>
-<li>Re-mapping one IP address space into another</li>
-<li>Use case: Give access to the internet to a Private Network (remap private IPs)</li>
-<li>Redundant instances within the selected AZ</li>
-<li>Automatically assigned with a public address</li>
-<li>Route tables for the NAT Gateway MUST be updated by administrator</li>
-<li>1 NAT gateway per AZ</li>
-<li>Starts at 5 Gbps and scales up to 45Gbps</li>
+<li>Checks health every 30 seconds by default, reductible to 10.</li>
+<li>Can initial a failover routing policy if status is returned unhealthy</li>
+<li>Integration with CloudWatch Alarm to notify about unhealthy status</li>
+<li>A health check can monitor another health checks (chain reaction)</li>
 </ul>
-<h4 id="nat-instances-legacy">NAT Instances (legacy)<a class="headerlink" href="#nat-instances-legacy" title="Permanent link">&para;</a></h4>
+<h3 id="resolver">Resolver<a class="headerlink" href="#resolver" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Individual EC2 instance on public subnet to give access to the internet (MUST exist in a public subnet)</li>
-<li>MUST disable source and destination network checks</li>
-<li>MUST have a route out of the private subnet to the NAT instance</li>
-<li>NAT instance size determinet how much traffic can handle</li>
-<li>High availability can be achieved using:<ul>
-<li>Autoscaling Groups</li>
-<li>Multiple subnets in different AZs-</li>
-<li>Automatic failover</li>
+<li>Regional service that lets you route DNS queries between VPCs and on-premises networks</li>
+<li>DNS Resolution for Hybrid Environments</li>
 </ul>
-</li>
-<li>Community AMIs exist to launch NAT instances</li>
-<li>Should not be used as Bastions</li>
-</ul>
-<h3 id="vpc-endpoints">VPC Endpoints<a class="headerlink" href="#vpc-endpoints" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Allows you to privately connect VPC with other AWS services<ul>
-<li>Instances in the VPC do not require a public IP address to communicate with service resources</li>
-<li>Traffic between your VPC and other services does not leave the AWS network</li>
-<li>Allow reliable and secure communication between services and instances</li>
-</ul>
-</li>
-<li>Horizontally scalled, redundant and highly available VPC component</li>
-<li>2 types: Interface Endpoints and Gateway Endpoints</li>
-</ul>
-<h3 id="interface-endpoints">Interface Endpoints<a class="headerlink" href="#interface-endpoints" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Elastic Network Interfaces (ENI) with private IP address</li>
-<li>Uses AWS PowerLink</li>
-<li>Supports multiple services</li>
-</ul>
-<h4 id="pricing_1">Pricing<a class="headerlink" href="#pricing_1" title="Permanent link">&para;</a></h4>
-<ul>
-<li>Internet endpoint per AZ ($/hour): 0.01 -&gt; 24/7 ~7.5$</li>
-<li>0.01$/GB data processed</li>
-</ul>
-<h3 id="gateway-endpoints">Gateway Endpoints<a class="headerlink" href="#gateway-endpoints" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Gateway that is a target for a specific route in yout route table.</li>
-<li>It is FREE</li>
-<li>Only support S3 and DynamoDB</li>
-</ul>
-<p><img alt="VPC Endpoints CheatSheet" src="../images/vpc/vpc.png" /></p>
-<h3 id="vpc-peering">VPC Peering<a class="headerlink" href="#vpc-peering" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Allows you to connect VPC between them over a direct network route using private IP addresses</li>
-<li>Instances on peered VPC behave just like they are on the same network</li>
-<li>Connects VPCS same or differents AWS accounts and/or regions</li>
-<li>Star configuration: 1 central VPC, the rest around the central one<ul>
-<li>No Transitive Peering -&gt; One to One to connect immediate VPC</li>
-</ul>
-</li>
-<li>No Overlapping CIDR Blocks</li>
-</ul>
-<h3 id="network-access-control-list-nacls">Network Access Control List (NACLs)<a class="headerlink" href="#network-access-control-list-nacls" title="Permanent link">&para;</a></h3>
-<ul>
-<li>VPCs are automatically given a default NACL which allows all outbound and inbound traffic</li>
-<li>Layer of security, acts like a firewall at subnet level</li>
-<li>Denies all traffic by default</li>
-<li>Stateless: any allowed inbound traffic is also allowed outbound</li>
-<li>Subnets an only belong to a single NACL, but a same NACLs can be associated to multiple subnets</li>
-<li>Seems like Linux iptables, allowing or denying incoming and outcoming subnet traffic</li>
-<li>Rule number -&gt; evaluation order from lowest (0) to highest (32766). AWS recommends to work in 10 or 100 increments to deal with new rules addition.</li>
-<li>Use case: block by IP, additional protection in case Security Groups SSH port wass left open</li>
-</ul>
+<p><img alt="Route53 CheatSheet" src="../images/route53/route53_3.png" /></p>
 
 
 

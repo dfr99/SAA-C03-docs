@@ -11,10 +11,10 @@
         <link rel="canonical" href="https://dfr99.github.io/SAA-C03-docs/cognito/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../cli/">
       
       
-        <link rel="next" href="../iam/">
+        <link rel="next" href="../ec2/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
@@ -222,6 +222,18 @@
         
   
   
+
+
+  <li class="md-tabs__item">
+    <a href="../cli/" class="md-tabs__link">
+      Programmatic access
+    </a>
+  </li>
+
+      
+        
+  
+  
     
   
 
@@ -239,8 +251,32 @@
 
 
   <li class="md-tabs__item">
+    <a href="../ec2/" class="md-tabs__link">
+      EC2
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
     <a href="../iam/" class="md-tabs__link">
       IAM
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../route53/" class="md-tabs__link">
+      Route53
     </a>
   </li>
 
@@ -348,6 +384,21 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        Programmatic access
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -397,6 +448,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#identity-provider" class="md-nav__link">
+    Identity Provider
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-pools" class="md-nav__link">
+    User Pools
+  </a>
+  
+    <nav class="md-nav" aria-label="User Pools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identity-pools" class="md-nav__link">
+    Identity Pools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cognito-sync" class="md-nav__link">
+    Cognito Sync
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -413,8 +505,38 @@
   
   
     <li class="md-nav__item">
+      <a href="../ec2/" class="md-nav__link">
+        EC2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../iam/" class="md-nav__link">
         IAM
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../route53/" class="md-nav__link">
+        Route53
       </a>
     </li>
   
@@ -484,24 +606,55 @@
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Dencentralized Managed Authentication</li>
-<li>Sign-up, sign-in integration for yout applications</li>
-<li>User Pools: User directory with authentication to Identity Providers to grant acces to your app</li>
-<li>Identity Pools: provide temporary credentials for usewrs to access AWS services</li>
-<li>Cognito Sync: syncs user data accross all devices</li>
+<li>Sign-up, sign-in integration for your applications</li>
+<li>Identity broker between AWS and identity provider, generating a JSON Wbe Token after successfull user authentication</li>
 </ul>
 <h2 id="web-identity-federation">Web identity federation<a class="headerlink" href="#web-identity-federation" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p>To exchange identity and security information between an identity provider and an application</p>
-</li>
-<li>
-<p>Identity Provider: trusted provider of your user identity that lets you use authenticate to access other services</p>
+<li>To exchange identity and security information between an identity provider and an application</li>
+</ul>
+<h2 id="identity-provider">Identity Provider<a class="headerlink" href="#identity-provider" title="Permanent link">&para;</a></h2>
 <ul>
-<li>SAML (Security Assertion Markup Language)</li>
-<li>SSO (Single Sign On)</li>
+<li>Trusted provider of your user identity that lets you use authenticate to access other services</li>
+<li>Types:<ul>
+<li>SSO (Single Sign On) -&gt; SAML (Security Assertion Markup Language)</li>
+<li>OAuth -&gt; OIDC (OpenID Connect)</li>
 </ul>
 </li>
 </ul>
+<h2 id="user-pools">User Pools<a class="headerlink" href="#user-pools" title="Permanent link">&para;</a></h2>
+<ul>
+<li>User directories used to manage the actions for web and mobile apps</li>
+<li>Use JSON Web Token to persist authentication<ul>
+<li>Sign-up</li>
+<li>Sign-in</li>
+<li>Account recovery</li>
+<li>Account verification</li>
+</ul>
+</li>
+<li>Decentralize your authentication</li>
+</ul>
+<h3 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Password requirements</li>
+<li>Apply MFA</li>
+<li>Restrict users access (on their own, admin verification)</li>
+<li>Trigger custom logs via Lambdasafter actions</li>
+</ul>
+<h2 id="identity-pools">Identity Pools<a class="headerlink" href="#identity-pools" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Temporary credentials to access AWS services</li>
+<li>Actual mechanism authorizing access to the AWS resources</li>
+<li>Authentication providers (Cognito - Amazon - Facebook)</li>
+<li>Unauthenticated identities: provide a unique identifier and AWS credentials to enable access</li>
+</ul>
+<h2 id="cognito-sync">Cognito Sync<a class="headerlink" href="#cognito-sync" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Sync user data and preferences across devices</li>
+<li>Push synchronization to push updates and synchronize data</li>
+<li>Uses SNS to send notifications to all user devices when data in the cloud changes</li>
+</ul>
+<p><img alt="Cognito CheatSheet" src="../images/cognito/cognito.png" /></p>
 
 
 
