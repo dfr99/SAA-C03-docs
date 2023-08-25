@@ -8,20 +8,20 @@
       
       
       
-        <link rel="canonical" href="https://dfr99.github.io/SAA-C03-docs/s3/">
+        <link rel="canonical" href="https://dfr99.github.io/SAA-C03-docs/asg/">
       
       
-        <link rel="prev" href="../route53/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../snowball/">
+        <link rel="next" href="../cli/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
-        <title>S3 - SAA-C03 Documentation</title>
+        <title>ASG - SAA-C03 Documentation</title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#s3" class="md-skip">
+        <a href="#asg" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              S3
+              ASG
             
           </span>
         </div>
@@ -222,10 +222,12 @@
         
   
   
+    
+  
 
 
   <li class="md-tabs__item">
-    <a href="../asg/" class="md-tabs__link">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
       ASG
     </a>
   </li>
@@ -294,12 +296,10 @@
         
   
   
-    
-  
 
 
   <li class="md-tabs__item">
-    <a href="./" class="md-tabs__link md-tabs__link--active">
+    <a href="../s3/" class="md-tabs__link">
       S3
     </a>
   </li>
@@ -396,11 +396,52 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../asg/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          ASG
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         ASG
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -486,149 +527,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          S3
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../s3/" class="md-nav__link">
         S3
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    Overview
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comparision-between-s3-options" class="md-nav__link">
-    Comparision between S3 options
-  </a>
-  
-    <nav class="md-nav" aria-label="Comparision between S3 options">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#s3-guarantees" class="md-nav__link">
-    S3 guarantees
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security-in-s3" class="md-nav__link">
-    Security in S3
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#encryption-in-s3" class="md-nav__link">
-    Encryption in S3
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-consistency" class="md-nav__link">
-    Data consistency
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cross-region-replication-crr" class="md-nav__link">
-    Cross Region Replication (CRR)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#versioning" class="md-nav__link">
-    Versioning
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#s3-lifecycle-management" class="md-nav__link">
-    S3 Lifecycle Management
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#transfer-acceleration" class="md-nav__link">
-    Transfer Acceleration
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#presigned-urls" class="md-nav__link">
-    Presigned URLS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mfa-delete" class="md-nav__link">
-    MFA Delete
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#s3-cli" class="md-nav__link">
-    S3 CLI
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#s3-cheatsheets" class="md-nav__link">
-    S3 CheatSheets
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -678,136 +581,9 @@
                   
 
 
-<h1 id="s3">S3<a class="headerlink" href="#s3" title="Permanent link">&para;</a></h1>
-<p>Simple Storage Service</p>
+<h1 id="asg">ASG<a class="headerlink" href="#asg" title="Permanent link">&para;</a></h1>
+<p>Auto Scaling Groups</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<ul>
-<li>S3 is in a global region</li>
-<li>Serverles storage in the cloud. Unlimited storage without worry about underlying infrastructure.</li>
-<li>
-<p>Object-based storage service -&gt; data as objects, not like file systems (data as files in a file hierarchy) or block storages (data as blocks within sectors/tracks)</p>
-</li>
-<li>
-<p>S3 console -&gt; interface to manage your data</p>
-</li>
-<li>S3 object -&gt; container for your data.<ul>
-<li>Key: name of the object</li>
-<li>Value: the data itself, sequence of bytes</li>
-<li>Version ID (when versioning is enabled)</li>
-<li>Metadata -&gt; additional information attached to the object</li>
-<li>You can store data from 0 bytes to 5 terabytes in size (for bigger files, check multipart)</li>
-</ul>
-</li>
-<li>S3 Bucket -&gt; Buckets hold objects and can also have folder which in turn hold objects. Universal namespace (name MUST be unique globally)</li>
-</ul>
-<h2 id="comparision-between-s3-options">Comparision between S3 options<a class="headerlink" href="#comparision-between-s3-options" title="Permanent link">&para;</a></h2>
-<p>S3 trades retrieval time, accessibility and durability for cheaper storage. From the most expensive to the cheapest:</p>
-<ul>
-<li>Standard (default)</li>
-<li>Intelligent Tiering</li>
-<li>Standard Infrequently Accessed (IA)</li>
-<li>One Zone IA</li>
-<li>Glacier Instant Retrieval</li>
-<li>Glacier Flexible Retrieval</li>
-<li>Glacier Deep Archive</li>
-<li>Reduced redundancy</li>
-<li>S3 on Outposts</li>
-</ul>
-<p>Check <a href="https://aws.amazon.com/s3/storage-classes/">S3 Storage Classes Comparison</a> to comparise the eight S3 services</p>
-<h3 id="s3-guarantees">S3 guarantees<a class="headerlink" href="#s3-guarantees" title="Permanent link">&para;</a></h3>
-<ul>
-<li>S3 is built for 99.99% availability</li>
-<li>Amazon guarantee 99.9% availability</li>
-<li>Amazon guarantees 99.999999999% (11' 9s) of durability</li>
-</ul>
-<h2 id="security-in-s3">Security in S3<a class="headerlink" href="#security-in-s3" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Private by default</li>
-<li>Access control is configured using Bucket Policies and ACL (Access Control Lists)<ul>
-<li>ACLs: legacy feature (not deprecated). Simplest way of granting access</li>
-<li>Bucket policy: JSON documnt policy to define comples rule access</li>
-</ul>
-</li>
-<li>Requests logs in a different bucket (even in a different AWS account)</li>
-</ul>
-<h2 id="encryption-in-s3">Encryption in S3<a class="headerlink" href="#encryption-in-s3" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Encryption in transit -&gt; traffic between local host and S3 is secured via SSL/TLS</li>
-<li>Server-Side Encryption (SSE, Encryption at Rest):<ul>
-<li>SSE-AES -&gt; Using AES-256, S3 handkes the key</li>
-<li>SSE-KMS -&gt; AWS KMS and you manage the keys</li>
-<li>SSE-C -&gt; Customer provided key, customer manages the keys</li>
-</ul>
-</li>
-<li>Client-Side Encryption -&gt; customer encrypts files before uploading them to S3</li>
-<li>Files would be accessible, just when files are at rest on the AWS servers, they are going to be encrypted</li>
-</ul>
-<h2 id="data-consistency">Data consistency<a class="headerlink" href="#data-consistency" title="Permanent link">&para;</a></h2>
-<ul>
-<li>New objects -&gt; Read after Write Consistency: able to read immediately after writing</li>
-<li>Overwrite or delete objects -&gt; Eventual Consistency: it takes time for S3 to replicate versions to AZS, so if you read immediately, S3 may return you an old copy. Just wait a few seconds before reading.</li>
-</ul>
-<h2 id="cross-region-replication-crr">Cross Region Replication (CRR)<a class="headerlink" href="#cross-region-replication-crr" title="Permanent link">&para;</a></h2>
-<ul>
-<li>When enabled any object that is uploadad will be automatically replicated to another region</li>
-<li>Higher durability and potential disaster recovery for objects</li>
-<li>It is required to enable versioning on both the source and destination buckets</li>
-<li>You can also have CRR replicate to another AWS account</li>
-<li>Deletion operation is not copied from one bucket to another</li>
-</ul>
-<h2 id="versioning">Versioning<a class="headerlink" href="#versioning" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Store all versions of an object in S3</li>
-<li>Fully integrates with S3 Lifecycle rules</li>
-<li>Once enabled it cannot be disabled, only suspend versioning, but existing versions remains</li>
-<li>MFA Delete -&gt; extra protection against data deletion</li>
-<li>Initial versions with NULL Version ID</li>
-<li>When you upload a new version</li>
-</ul>
-<h2 id="s3-lifecycle-management">S3 Lifecycle Management<a class="headerlink" href="#s3-lifecycle-management" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Automate process of moving objects to different Storage Classes or deleting objects</li>
-<li>Can be used together with versioning -&gt; can be applied to both current an previous versions</li>
-<li>Define filters to group objects and apply the same lifecycle configurations, even using minimum and maximun object size</li>
-</ul>
-<h2 id="transfer-acceleration">Transfer Acceleration<a class="headerlink" href="#transfer-acceleration" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Fast and secure files transfer over long distances between end users and S3 bucket</li>
-<li>Uses Edge Locations (users-closer data centers)</li>
-<li>Users utilizes a distinct URL for an Edge Location</li>
-<li>Use an optimized network path (Amazon's backbone network)</li>
-</ul>
-<h2 id="presigned-urls">Presigned URLS<a class="headerlink" href="#presigned-urls" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Generate temporary URL to provide access to private objects, allows users to both upload and download object data.</li>
-<li>Command to generate presigned URL <strong>MUST</strong> be executed on the same region of the S3 bucket, using AWS CLI: <code>aws --region &lt;region&gt; s3 presign &lt;s3_url&gt; --expires-in &lt;seconds&gt;</code></li>
-</ul>
-<h2 id="mfa-delete">MFA Delete<a class="headerlink" href="#mfa-delete" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Ensures users cannot delete objects from a bucket unless they provide their MFA code.</li>
-<li>Conditions to enable it:<ul>
-<li>AWS CLI must be used to turn on MFA</li>
-<li>Versioning enable</li>
-</ul>
-</li>
-</ul>
-<h2 id="s3-cli">S3 CLI<a class="headerlink" href="#s3-cli" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>aws s3</code><ul>
-<li><code>ls</code> -&gt; List all buckets</li>
-<li><code>ls &lt;bucket_name&gt;</code> -&gt; list all folders and objects in bucket</li>
-<li><code>ls &lt;bucket_name&gt;/&lt;folder_name&gt;</code> -&gt; list all folders and objects in folder</li>
-<li><code>cp &lt;s3_url&gt; &lt;local_folder&gt;</code> -&gt; downloads object to your local</li>
-<li><code>cp &lt;local_file&gt; &lt;s3_url&gt;</code> -&gt; uploads object to s3</li>
-<li><code>rm &lt;s3_url_to_object&gt;</code> -&gt; removes object from s3</li>
-<li><code>presign &lt;s3_url&gt; --expires-in &lt;seconds&gt;</code> -&gt; generate a presigned url for a s3 bucket that expires in <em>seconds</em></li>
-</ul>
-</li>
-</ul>
-<h2 id="s3-cheatsheets">S3 CheatSheets<a class="headerlink" href="#s3-cheatsheets" title="Permanent link">&para;</a></h2>
-<p><img alt="S3 CheatSheet" src="../images/s3/s3.png" />
-<img alt="S3 CheatSheet" src="../images/s3/s3_2.png" />
-<img alt="S3 CheatSheet" src="../images/s3/s3_3.png" /></p>
 
 
 

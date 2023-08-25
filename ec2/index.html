@@ -225,6 +225,18 @@
 
 
   <li class="md-tabs__item">
+    <a href="../asg/" class="md-tabs__link">
+      ASG
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
     <a href="../cli/" class="md-tabs__link">
       Programmatic access
     </a>
@@ -386,6 +398,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../asg/" class="md-nav__link">
+        ASG
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../cli/" class="md-nav__link">
         Programmatic access
       </a>
@@ -474,6 +501,116 @@
   <a href="#instace-profiles" class="md-nav__link">
     Instace Profiles
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#placement-groups" class="md-nav__link">
+    Placement Groups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#userdata" class="md-nav__link">
+    Userdata
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metadata" class="md-nav__link">
+    Metadata
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ec2-pricing" class="md-nav__link">
+    EC2 pricing
+  </a>
+  
+    <nav class="md-nav" aria-label="EC2 pricing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on-demand-default" class="md-nav__link">
+    On-Demand (default)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reserved-ri" class="md-nav__link">
+    Reserved (RI)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spot" class="md-nav__link">
+    Spot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dedicated" class="md-nav__link">
+    Dedicated
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amis" class="md-nav__link">
+    AMIs
+  </a>
+  
+    <nav class="md-nav" aria-label="AMIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-case" class="md-nav__link">
+    Use case
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ami-marketplace" class="md-nav__link">
+    AMI Marketplace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ami-creation" class="md-nav__link">
+    AMI Creation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-an-ami" class="md-nav__link">
+    Choosing an AMI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copying-an-ami" class="md-nav__link">
+    Copying an AMI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -593,14 +730,146 @@
 </ul>
 <h2 id="instances-sizes">Instances sizes<a class="headerlink" href="#instances-sizes" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Sizes generally doble in pric and key attributes</li>
+<li>Sizes generally doble in price and key attributes</li>
 <li>To upgrade or downgrade just up or down to the next size, respectively</li>
 </ul>
 <h2 id="instace-profiles">Instace Profiles<a class="headerlink" href="#instace-profiles" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Attach a role to an Instance to give it acces to AWS Resources without embedding AWS credentials directly (not recommendend, avoid this practice)</li>
 <li>Reference to a IAM role</li>
+<li><strong>Always avoid embedding your AWS credentials when possible</strong></li>
 </ul>
+<h2 id="placement-groups">Placement Groups<a class="headerlink" href="#placement-groups" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Choose logical placement of your instance to optimize communication, performance or durability.</li>
+<li>Free, optional use</li>
+<li>3 different types:<ul>
+<li>Cluster: same AZ (cannot be multi-AZ), low-latency network, well suited for HPC apps. Same rack for all instances</li>
+<li>Partition: spreads instances across logical partitions, rack per partition (each partition do not share hardware), wel suited for large distributed and replicated workloads (Hadoop, Kafka, Cassandra)</li>
+<li>Spread: each instance is placed on a different rack, well suited for critical instances that should be keep separated. Spreads can be multi-AZ, maximum of 7 instances. 1 rack per instance </li>
+</ul>
+</li>
+</ul>
+<h2 id="userdata">Userdata<a class="headerlink" href="#userdata" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Script that wille be automatically run when launching an EC2 instance</li>
+<li><code>curl http://169.254.169.254/latest/user-data</code> to see the userdata script</li>
+</ul>
+<h2 id="metadata">Metadata<a class="headerlink" href="#metadata" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Useful to perform all sorts of advanced AWS staging automation when you combine with user data</li>
+<li><code>curl http://169.254.169.254/latest/meta-data</code> to see the metadata information</li>
+</ul>
+<p><img alt="EC2 Cheat Sheet" src="../images/ec2/ec2.png" /></p>
+<h2 id="ec2-pricing">EC2 pricing<a class="headerlink" href="#ec2-pricing" title="Permanent link">&para;</a></h2>
+<p>4 categories</p>
+<h3 id="on-demand-default">On-Demand (default)<a class="headerlink" href="#on-demand-default" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Oriented to short-term, spikey or unpredictable workloads (experiment, development)</li>
+<li>No up-front payment and no long-term commitment</li>
+<li>Charged by hour (default) or by minute</li>
+</ul>
+<h3 id="reserved-ri">Reserved (RI)<a class="headerlink" href="#reserved-ri" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Designed for steady-state, predictable usage or require reserved capacity</li>
+<li>Can be shared between multiple accounts</li>
+<li>Can be sold in the RI Marketplace</li>
+<li>Reduced Pricing is based on Term, Class Offering and Payment Option</li>
+<li>Class Offering:<ul>
+<li>Standard: cheapest, but you can change RI attributes</li>
+<li>Convertible: the most expensive, but allows you to change RI Attributes if greater or equal in value</li>
+<li>Scheduled: reserve instances for specific time periods (e.g once a week for a few hours). Savings vary</li>
+</ul>
+</li>
+<li>
+<p>Terms:</p>
+<ul>
+<li>Commit to a 1 Year or 3 Year contract</li>
+<li>The longer the term the greater savings</li>
+</ul>
+</li>
+<li>
+<p>Payment options:</p>
+<ul>
+<li>All upfront, Partial upfront, No upfront</li>
+<li>The greater the upfront the greater the savings</li>
+</ul>
+</li>
+</ul>
+<p><img alt="On-demand and RI instances" src="../images/ec2/ec2_2.png" /></p>
+<h3 id="spot">Spot<a class="headerlink" href="#spot" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Biggest savings option</li>
+<li>Instances can be terminated by AWS at any time, if the computing capacity is required by on-demand customers</li>
+<li>You do not charged for a partial hour of usage if this happens</li>
+<li>If you terminate an instance you will still be charged for any hour that it rans</li>
+<li>AWS Batch is an easy and convenient way to use Spot Pricing</li>
+<li>Designed for applications that have flexible start and end times or applications that are only feasible at very low compute costs</li>
+</ul>
+<h3 id="dedicated">Dedicated<a class="headerlink" href="#dedicated" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Most expensive option</li>
+<li>Designed to meet regulatory requirements (server-bound licensing that won't support multi-tenancy or cloud deployments) or enterprise requirements</li>
+<li>Multi-tenant vs. Single-Tenant:<ul>
+<li>Multi-Tenant: virtual isolation between customers</li>
+<li>Single-Tenant: physical isolation between customers</li>
+</ul>
+</li>
+<li>Offered in both On-Demand and Reserved instances</li>
+</ul>
+<p><img alt="Spot and Dedicated instances" src="../images/ec2/ec2_3.png" /></p>
+<h2 id="amis">AMIs<a class="headerlink" href="#amis" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Templates to configure new instances</li>
+<li>Create copies of your servers by turning your EC2 instances into AMIs</li>
+<li>Region specific (AMI ID varies between regions for the same AMI)</li>
+<li>AMIs hold the following information:<ul>
+<li>Template for the root volume for the instance (OS, apps...)</li>
+<li>Block devide mapping that specifies the volumes to attach to the instance when it is launched</li>
+<li>Launch permission that control which AWS accounts can use the AMI to launch instances</li>
+</ul>
+</li>
+</ul>
+<h3 id="use-case">Use case<a class="headerlink" href="#use-case" title="Permanent link">&para;</a></h3>
+<ul>
+<li>System Manager Automation to routinely patch AMIs with security updates</li>
+<li>AMIs are used with Launch Templates</li>
+<li>Help to keep incremental changes to your OS, app code and system packages</li>
+</ul>
+<h3 id="ami-marketplace">AMI Marketplace<a class="headerlink" href="#ami-marketplace" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Let you purchase subscriptions to vendor maintained AMIs<ul>
+<li>e.g Security harden AMIs are very popular</li>
+</ul>
+</li>
+</ul>
+<h3 id="ami-creation">AMI Creation<a class="headerlink" href="#ami-creation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Create an AMI from a running or stopped EC2 instance</li>
+</ul>
+<h3 id="choosing-an-ami">Choosing an AMI<a class="headerlink" href="#choosing-an-ami" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Community AMI are free, AMIs on AWS Marketplace could be free or paid</li>
+<li>AMIs have an AMI ID which is region specific</li>
+<li>Can be selected based on:<ul>
+<li>Region</li>
+<li>OS</li>
+<li>Architecture</li>
+<li>Launch Permissions</li>
+<li>Root Device Volume<ul>
+<li>EBS</li>
+<li>Ephemeral instance store</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="copying-an-ami">Copying an AMI<a class="headerlink" href="#copying-an-ami" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Region specific, useful to use an AMI from another region</li>
+<li>Copy the AMI and select the destination region</li>
+</ul>
+<p><img alt="AMI Cheat Sheet" src="../images/ec2/ec2_4.png" /></p>
 
 
 
