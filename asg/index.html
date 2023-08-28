@@ -275,6 +275,18 @@
 
 
   <li class="md-tabs__item">
+    <a href="../elb/" class="md-tabs__link">
+      ELB
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
     <a href="../iam/" class="md-tabs__link">
       IAM
     </a>
@@ -438,6 +450,74 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#automatic-scaling" class="md-nav__link">
+    Automatic scaling
+  </a>
+  
+    <nav class="md-nav" aria-label="Automatic scaling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#capacity-settings" class="md-nav__link">
+    Capacity settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#health-check-replacements" class="md-nav__link">
+    Health check replacements
+  </a>
+  
+    <nav class="md-nav" aria-label="Health check replacements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ec2-health-check" class="md-nav__link">
+    EC2 Health Check
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elb-health-check" class="md-nav__link">
+    ELB Health Check
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaling-policies" class="md-nav__link">
+    Scaling policies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elb-association" class="md-nav__link">
+    ELB Association
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#launch-configurations" class="md-nav__link">
+    Launch Configurations
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -486,6 +566,21 @@
     <li class="md-nav__item">
       <a href="../ec2/" class="md-nav__link">
         EC2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../elb/" class="md-nav__link">
+        ELB
       </a>
     </li>
   
@@ -584,6 +679,45 @@
 <h1 id="asg">ASG<a class="headerlink" href="#asg" title="Permanent link">&para;</a></h1>
 <p>Auto Scaling Groups</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Set scaling rules which will automatically scale in and scale out EC2 instances to meet current demand</li>
+<li>EC2 instances in a ASG is consider as a group for purposesof automatic scaling and management</li>
+</ul>
+<h2 id="automatic-scaling">Automatic scaling<a class="headerlink" href="#automatic-scaling" title="Permanent link">&para;</a></h2>
+<h3 id="capacity-settings">Capacity settings<a class="headerlink" href="#capacity-settings" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Maximum, minimum and desired capacity</li>
+<li>ASG will always launch instances to meet minimum capacity</li>
+</ul>
+<h3 id="health-check-replacements">Health check replacements<a class="headerlink" href="#health-check-replacements" title="Permanent link">&para;</a></h3>
+<h4 id="ec2-health-check">EC2 Health Check<a class="headerlink" href="#ec2-health-check" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Based on EC2 Status Checks. If an instance is considered unhealthy, ASG will terminate and launch a new instance</li>
+</ul>
+<h4 id="elb-health-check">ELB Health Check<a class="headerlink" href="#elb-health-check" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Pinging HTTP(S) endpoint with an expected response. If ELB determines a instance is unhealthy, it forwards this information to ASG which will terminate and launch a new instance</li>
+</ul>
+<h3 id="scaling-policies">Scaling policies<a class="headerlink" href="#scaling-policies" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Scaling Out: add instances. Scaling In: remove instances</li>
+<li>Target Tracking Scaling Policy: maintains a specific metric (e.g. CPU Utilization) at a target value</li>
+<li>Simple Scaling Policy (legacy, use scaling policies with steps): scales when an alarma is breached</li>
+<li>Scaling policies with steps: scales when an alarm is breached, can scalates based on alarm value changing. Replaces simple scaling policy functionality</li>
+</ul>
+<h2 id="elb-association">ELB Association<a class="headerlink" href="#elb-association" title="Permanent link">&para;</a></h2>
+<ul>
+<li>ASG can be associated with Elastic Load Balancers (ELB), allowing to set richer health checks</li>
+<li>Classic Load Balancers are associated directly to the ASG</li>
+<li>ALBs and NLBs are associated indirectly, via Target Group, to the ASGs</li>
+</ul>
+<h2 id="launch-configurations">Launch Configurations<a class="headerlink" href="#launch-configurations" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Instance configuration template that ASG uses to launch EC2 instances</li>
+<li>Launch Configurations cannot be edited, you need to create a new one and manually associate that new Launch Configuration to the ASG</li>
+<li>Launch Templates are Launch Configurations with Versioning</li>
+</ul>
+<p><img alt="ASG Cheat Sheet" src="../images/asg/asg.png" /></p>
 
 
 

@@ -8,20 +8,20 @@
       
       
       
-        <link rel="canonical" href="https://dfr99.github.io/SAA-C03-docs/route53/">
+        <link rel="canonical" href="https://dfr99.github.io/SAA-C03-docs/elb/">
       
       
-        <link rel="prev" href="../iam/">
+        <link rel="prev" href="../ec2/">
       
       
-        <link rel="next" href="../s3/">
+        <link rel="next" href="../iam/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
-        <title>Route53 - SAA-C03 Documentation</title>
+        <title>ELB - SAA-C03 Documentation</title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#route53" class="md-skip">
+        <a href="#elb" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Route53
+              ELB
             
           </span>
         </div>
@@ -270,10 +270,12 @@
         
   
   
+    
+  
 
 
   <li class="md-tabs__item">
-    <a href="../elb/" class="md-tabs__link">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
       ELB
     </a>
   </li>
@@ -294,12 +296,10 @@
         
   
   
-    
-  
 
 
   <li class="md-tabs__item">
-    <a href="./" class="md-tabs__link md-tabs__link--active">
+    <a href="../route53/" class="md-tabs__link">
       Route53
     </a>
   </li>
@@ -468,11 +468,148 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../elb/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          ELB
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         ELB
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    Components
+  </a>
+  
+    <nav class="md-nav" aria-label="Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listeners" class="md-nav__link">
+    Listeners
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rules" class="md-nav__link">
+    Rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-group" class="md-nav__link">
+    Target Group
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-load-balancer-alb" class="md-nav__link">
+    Application Load Balancer (ALB)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-load-balancer-nlb" class="md-nav__link">
+    Network Load Balancer (NLB)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classic-load-balancer-clb-legacy" class="md-nav__link">
+    Classic Load Balancer (CLB, legacy)
+  </a>
+  
+    <nav class="md-nav" aria-label="Classic Load Balancer (CLB, legacy)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sticky-session" class="md-nav__link">
+    Sticky session
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xff-header" class="md-nav__link">
+    XFF Header
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elb-health-checks" class="md-nav__link">
+    ELB Health Checks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-zone-load-balancing" class="md-nav__link">
+    Cross-Zone Load Balancing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-routing" class="md-nav__link">
+    Request routing
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -498,181 +635,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Route53
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../route53/" class="md-nav__link">
         Route53
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction-to-ip" class="md-nav__link">
-    Introduction to IP
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#introduction-to-dns" class="md-nav__link">
-    Introduction to DNS
-  </a>
-  
-    <nav class="md-nav" aria-label="Introduction to DNS">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#domain-registrers" class="md-nav__link">
-    Domain registrers
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#top-level-domains" class="md-nav__link">
-    Top-level domains
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#start-of-authority-soa" class="md-nav__link">
-    Start of Authority (SOA)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#address-a-records" class="md-nav__link">
-    Address (A) Records
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#canonical-names-cname-records" class="md-nav__link">
-    Canonical Names (CNAME) Records
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#name-server-ns-records" class="md-nav__link">
-    Name Server (NS) Records
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#time-to-live-ttl" class="md-nav__link">
-    Time to Live (TTL)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#introduction-to-route53" class="md-nav__link">
-    Introduction to Route53
-  </a>
-  
-    <nav class="md-nav" aria-label="Introduction to Route53">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#record-sets" class="md-nav__link">
-    Record Sets
-  </a>
-  
-    <nav class="md-nav" aria-label="Record Sets">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#alias-record" class="md-nav__link">
-    Alias Record
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#routing-policies" class="md-nav__link">
-    Routing policies
-  </a>
-  
-    <nav class="md-nav" aria-label="Routing policies">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#traffic-flow" class="md-nav__link">
-    Traffic flow
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#health-checks" class="md-nav__link">
-    Health Checks
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#resolver" class="md-nav__link">
-    Resolver
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -737,116 +704,104 @@
                   
 
 
-<h1 id="route53">Route53<a class="headerlink" href="#route53" title="Permanent link">&para;</a></h1>
-<h2 id="introduction-to-ip">Introduction to IP<a class="headerlink" href="#introduction-to-ip" title="Permanent link">&para;</a></h2>
+<h1 id="elb">ELB<a class="headerlink" href="#elb" title="Permanent link">&para;</a></h1>
+<p>Elastic Load Balancer</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Internet Protocol</li>
-<li>IP Addresses: computer identifier on a network, allows communication with it using the Internet Protocol</li>
-<li>Two versions:<ul>
-<li>IPv4: 32-bit address space</li>
-<li>IPv6: 128-bit address space</li>
+<li>Distributes incoming application traffic across multiple targets, such as EC2 instances, containers, IP addresses and Lambda fucntions</li>
+<li>Must have at least two AZs and cannot go cross-region (must create one per region)</li>
+<li>Physical hardware or virtual software thah accepts incoming traffic, and then distributes the traffic to multiple targets</li>
+<li>You can attach ACM SSL to any of the ELB types for SSL support</li>
+<li>Balances the traffic load via different rules, based on the types of load balancers:<ul>
+<li>Application Load Balancer (ALB) -&gt; layer 7 (HTTP/HTTPS)</li>
+<li>Network Load Balancer (NLB) -&gt; layer 4 (TCP/UDP)</li>
+<li>Classic Load Balancer (CLB, Legacy)</li>
 </ul>
 </li>
 </ul>
-<h2 id="introduction-to-dns">Introduction to DNS<a class="headerlink" href="#introduction-to-dns" title="Permanent link">&para;</a></h2>
+<h2 id="components">Components<a class="headerlink" href="#components" title="Permanent link">&para;</a></h2>
+<h3 id="listeners">Listeners<a class="headerlink" href="#listeners" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Domain Name Service</li>
-<li>Translates domain names to IP addresses</li>
-<li>Find specific servers on the Internet depending what domain name you browse</li>
+<li>Evaluates any traffic that it matches the Listener's port</li>
+<li>For CLB, EC2 instances are directly registered to the LB, using just listeners</li>
 </ul>
-<h3 id="domain-registrers">Domain registrers<a class="headerlink" href="#domain-registrers" title="Permanent link">&para;</a></h3>
+<h3 id="rules">Rules<a class="headerlink" href="#rules" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Authorities who have the ability to assign domain names under on or more <a href="#top-level-domains">top-level domains</a></li>
-<li>Domain get registered through InterNIC, service provided by the Internet Corporation for Assigned Names and Numbers (ICANN), enforcing the uniqueness of domain names all over the internet.</li>
+<li>Not available for CLB</li>
+<li>Listeners invoke rule to decide what to do with the traffic</li>
+<li>Generally, rules forward traffic to a Target Group</li>
 </ul>
-<h3 id="top-level-domains">Top-level domains<a class="headerlink" href="#top-level-domains" title="Permanent link">&para;</a></h3>
+<h3 id="target-group">Target Group<a class="headerlink" href="#target-group" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Last word within a domain represents the <strong>top-level</strong> domain name</li>
-<li>The second word within a domain name is know as the <strong>second-level</strong> domain name</li>
-<li>Controlled by the Internet Assigned Numbers Authority (IANA)</li>
-<li>AWS has their own top level domain: <strong>.aws</strong></li>
+<li>Not available for CLB</li>
+<li>EC2 instances are registered as targets to a Target Group</li>
 </ul>
-<h3 id="start-of-authority-soa">Start of Authority (SOA)<a class="headerlink" href="#start-of-authority-soa" title="Permanent link">&para;</a></h3>
+<h2 id="application-load-balancer-alb">Application Load Balancer (ALB)<a class="headerlink" href="#application-load-balancer-alb" title="Permanent link">&para;</a></h2>
 <ul>
-<li>SOA record stores information about the domain</li>
-<li>A Zone file can contain only one SOA Record</li>
+<li>Designed to balance HTTP and HTTPS traffic (web applications)</li>
+<li>Has listeners, rules and target groups to route traffic</li>
+<li>Operate at Layer 7 (application layer on TCP/IP stack)</li>
+<li>Request Routing: allows you to add routing rules to your listeners based on HTTP(S) protocol</li>
+<li>Web Application Firewall (WAF) can be attached to ALB</li>
 </ul>
-<p><img alt="SOA record structure" src="../images/route53/route53.png" /></p>
-<h3 id="address-a-records">Address (A) Records<a class="headerlink" href="#address-a-records" title="Permanent link">&para;</a></h3>
+<h2 id="network-load-balancer-nlb">Network Load Balancer (NLB)<a class="headerlink" href="#network-load-balancer-nlb" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Allows you to convert the name of a domain directly into an IP Address</li>
+<li>Designed to balancer TCP/UDP</li>
+<li>Operate at Layer 4 (trasport layer on TCP/IP stack)</li>
+<li>Uses listeners and target groups to route traffic</li>
+<li>Can handle millions of requests per second while still maintaining extremely low latency</li>
+<li>Can perform Cross-Zone Load Balancing</li>
+<li>Great when network performance is critical</li>
 </ul>
-<h3 id="canonical-names-cname-records">Canonical Names (CNAME) Records<a class="headerlink" href="#canonical-names-cname-records" title="Permanent link">&para;</a></h3>
+<h2 id="classic-load-balancer-clb-legacy">Classic Load Balancer (CLB, legacy)<a class="headerlink" href="#classic-load-balancer-clb-legacy" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Used to resolve one domain name to another rather than an IP address</li>
-<li>Useful when you work with dynamic IPs</li>
+<li>It was AWS first load balancer</li>
+<li>It only uses Listeners and EC2 instances are directly registered as targets to CLB</li>
+<li>It can balance HTTP or HTTPS, using layer 7 specific features such as sticky sessions</li>
+<li>It also can balance TCP traffic using strict layer 4</li>
+<li>Can perform Cross-Zone Load Balancing</li>
+<li>It will respond with a 504 error (timeout) if the underlying app is not responding (at the web server or database level)</li>
+<li>Not recommended for use right now</li>
 </ul>
-<h3 id="name-server-ns-records">Name Server (NS) Records<a class="headerlink" href="#name-server-ns-records" title="Permanent link">&para;</a></h3>
+<h3 id="sticky-session">Sticky session<a class="headerlink" href="#sticky-session" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Used by top-level domain servers to direct traffic to the DNS server containing the authoritative DNS records.</li>
-<li>Multiple name servers can be provided for redundancy</li>
-<li>In AWS NS records would be pointed at the AWS servers</li>
+<li>Advanced load balancing method that allows you to bind a user session to a specific EC2 instance</li>
+<li>Ensures all request form that session are sent to the same instance</li>
+<li>Typically used with CLB, but ALB can handled too (can only be set on a Target Group). Not available for NLB</li>
+<li>Cookies are used to remember which EC2 instance</li>
+<li>Useful when specific information is only stored locally on a single instance</li>
 </ul>
-<h3 id="time-to-live-ttl">Time to Live (TTL)<a class="headerlink" href="#time-to-live-ttl" title="Permanent link">&para;</a></h3>
+<h2 id="xff-header">XFF Header<a class="headerlink" href="#xff-header" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Lenght of time that a DNS record gets cached on the resolving server</li>
-<li>The lower the TTL, the faster that changes to DNS records will propagate across the Internet</li>
-<li>Measured in seconds under IPv4</li>
+<li>X-Forwarded-For header</li>
+<li>Command method for identifying the originating IP address of a client connecting to a web server through an HTTP proxy or a load balancer</li>
 </ul>
-<p><img alt="DNS CheatSheet" src="../images/route53/route53_2.png" /></p>
-<h2 id="introduction-to-route53">Introduction to Route53<a class="headerlink" href="#introduction-to-route53" title="Permanent link">&para;</a></h2>
+<h2 id="elb-health-checks">ELB Health Checks<a class="headerlink" href="#elb-health-checks" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Highly available and scalable cloud DNS, integrated with AWS Services</li>
-<li>Functionalities:<ul>
-<li>Register and manage domains</li>
-<li>Create DNS routing rules</li>
-<li>Implement complex traffic flows</li>
-<li>Resolve VPCs outside AWS</li>
-<li>Monitoring DNS records</li>
+<li>Report health checks as <code>InService</code> or <code>OutofService</code></li>
+<li>Communicate directly with the instance to determine its state</li>
+<li>Done not terminate unhealthy instance (ASG function), it will just redirect traffic to healthy instances</li>
+</ul>
+<h2 id="cross-zone-load-balancing">Cross-Zone Load Balancing<a class="headerlink" href="#cross-zone-load-balancing" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Only for CLB and NLB</li>
+<li>When enabled, requests are distributed evenly across the instances in all enabled AZ</li>
+<li>When disabled, requests are distributed evenly across the instances in only its AZ</li>
+</ul>
+<h2 id="request-routing">Request routing<a class="headerlink" href="#request-routing" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Apply rules to incoming traffic an the forward or redirect traffic</li>
+<li>We can check on different conditions:<ul>
+<li>Host header</li>
+<li>Http header</li>
+<li>Source IP</li>
+<li>Path</li>
+<li>Query string</li>
+<li>HTTP header method</li>
 </ul>
 </li>
-<li>Use case: get custom domain to point to your AWS Resources</li>
 </ul>
-<h3 id="record-sets">Record Sets<a class="headerlink" href="#record-sets" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Create record sets to point naked domain and subdomains via domain records</li>
-</ul>
-<h4 id="alias-record">Alias Record<a class="headerlink" href="#alias-record" title="Permanent link">&para;</a></h4>
-<ul>
-<li>AWS own special record to extend DNS functionality, allowing to detect IP changes and continuously pointing that endpoint to the correct resource</li>
-<li>Useful whe routing traffic to AWS resources</li>
-</ul>
-<h3 id="routing-policies">Routing policies<a class="headerlink" href="#routing-policies" title="Permanent link">&para;</a></h3>
-<ul>
-<li>7 different types available:<ul>
-<li>Simple (default): 1 record, 1 or more IP addresses. Return IPs to the user in a random user</li>
-<li>Weighted: split traffic based on weights (traffic percentage), balancing the traffic through the different servers</li>
-<li>Latency-based: direct traffic based on the lowst network latency possible for the end-user based on region. Requires a latency resource record</li>
-<li>Failover: active/passive setups in situations where you want a primary site in one location and a secondary data recovery site in another. Monitor health-checks from primary site to determinate where to direct traffic</li>
-<li>Geolocation: direct traffic based on the geographic location of the origin of the request</li>
-<li>Geo-proximity: direct traffic based on the geographic location of users and AWS resources. Can route more or less traffic to a specific resource using a <em>Bias</em> value. You <strong>MUST</strong> use <a href="#traffic-flow">Route53 Traffic Flow</a> in order to use it (select regions and visualize the bias)</li>
-<li>Multi-value: let you configure Route53 to return multiple values such as IP addresses for your web-servers, in response to DNS queries</li>
-</ul>
-</li>
-</ul>
-<h4 id="traffic-flow">Traffic flow<a class="headerlink" href="#traffic-flow" title="Permanent link">&para;</a></h4>
-<ul>
-<li>Visual editor that let you create routing configurations for your resources</li>
-<li>Support versioning</li>
-</ul>
-<h3 id="health-checks">Health Checks<a class="headerlink" href="#health-checks" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Checks health every 30 seconds by default, reductible to 10.</li>
-<li>Can initial a failover routing policy if status is returned unhealthy</li>
-<li>Integration with CloudWatch Alarm to notify about unhealthy status</li>
-<li>A health check can monitor another health checks (chain reaction)</li>
-</ul>
-<h3 id="resolver">Resolver<a class="headerlink" href="#resolver" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Regional service that lets you route DNS queries between VPCs and on-premises networks</li>
-<li>DNS Resolution for Hybrid Environments</li>
-</ul>
-<p><img alt="Route53 CheatSheet" src="../images/route53/route53_3.png" /></p>
+<p><img alt="ELB Cheat Sheet (part 1)" src="../images/elb/elb.png" /></p>
 
 
 
