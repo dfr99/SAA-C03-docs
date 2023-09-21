@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://dfr99.github.io/SAA-C03-docs/cognito/">
+        <link rel="canonical" href="https://dfr99.github.io/SAA-C03-docs/rds/">
       
       
-        <link rel="prev" href="../cloudfront/">
+        <link rel="prev" href="../iam/">
       
       
-        <link rel="next" href="../ebs/">
+        <link rel="next" href="../redshift/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Cognito - SAA-C03 Documentation</title>
+        <title>RDS - SAA-C03 Documentation</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cognito" class="md-skip">
+        <a href="#rds" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cognito
+              RDS
             
           </span>
         </div>
@@ -288,11 +288,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../cognito/" class="md-tabs__link">
         
   
     
@@ -392,9 +390,11 @@
         
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../rds/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
     
@@ -618,29 +618,9 @@
       
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Cognito
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../cognito/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -649,81 +629,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    Overview
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#web-identity-federation" class="md-nav__link">
-    Web identity federation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#identity-provider" class="md-nav__link">
-    Identity Provider
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#user-pools" class="md-nav__link">
-    User Pools
-  </a>
-  
-    <nav class="md-nav" aria-label="User Pools">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#attributes" class="md-nav__link">
-    Attributes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#identity-pools" class="md-nav__link">
-    Identity Pools
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cognito-sync" class="md-nav__link">
-    Cognito Sync
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -827,9 +732,29 @@
       
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../rds/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    RDS
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -838,6 +763,96 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encryption" class="md-nav__link">
+    Encryption
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rds-backups" class="md-nav__link">
+    RDS Backups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-az" class="md-nav__link">
+    Multi-AZ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-replicas" class="md-nav__link">
+    Read Replicas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aurora" class="md-nav__link">
+    Aurora
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaling-and-availability-with-aurora" class="md-nav__link">
+    Scaling and availability with Aurora
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aurora-fault-tolerance-durability" class="md-nav__link">
+    Aurora Fault tolerance &amp; durability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aurora-replicas" class="md-nav__link">
+    Aurora Replicas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aurora-serverless" class="md-nav__link">
+    Aurora Serverless
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -952,59 +967,86 @@
                   
 
 
-<h1 id="cognito">Cognito<a class="headerlink" href="#cognito" title="Permanent link">&para;</a></h1>
+<h1 id="rds">RDS<a class="headerlink" href="#rds" title="Permanent link">&para;</a></h1>
+<p>Relational Database Service</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Dencentralized Managed Authentication</li>
-<li>Sign-up, sign-in integration for your applications</li>
-<li>Identity broker between AWS and identity provider, generating a JSON Wbe Token after successfull user authentication</li>
+<li>A managed relational database services that supports multiple SQL engines (MySQL, MariaDB, Amazon Aurora, PostgreSQL, Oracle, SQL Server)</li>
+<li>Easy to scale, backup and secure</li>
 </ul>
-<h2 id="web-identity-federation">Web identity federation<a class="headerlink" href="#web-identity-federation" title="Permanent link">&para;</a></h2>
+<h2 id="encryption">Encryption<a class="headerlink" href="#encryption" title="Permanent link">&para;</a></h2>
 <ul>
-<li>To exchange identity and security information between an identity provider and an application</li>
+<li>Encryption at-rest for all RDS engines (newer engine versions)</li>
+<li>It will also encrypted the automated backups, snapshots and read replicas</li>
+<li>Handled by AWS KMS</li>
 </ul>
-<h2 id="identity-provider">Identity Provider<a class="headerlink" href="#identity-provider" title="Permanent link">&para;</a></h2>
+<h2 id="rds-backups">RDS Backups<a class="headerlink" href="#rds-backups" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Trusted provider of your user identity that lets you use authenticate to access other services</li>
-<li>Types:<ul>
-<li>SSO (Single Sign On) -&gt; SAML (Security Assertion Markup Language)</li>
-<li>OAuth -&gt; OIDC (OpenID Connect)</li>
+<li>Automated backups:<ul>
+<li>1-35 days retention period (7 days by default)</li>
+<li>Enabled by default</li>
+<li>Data is stored inside S3</li>
+<li>No additional charges</li>
+<li>Backup window -&gt; Storage I/O may be suspended during backup</li>
+</ul>
+</li>
+<li>
+<p>Manual snapshots:</p>
+<ul>
+<li>Taken manually by the user</li>
+<li>Persists after RDS instance deletion</li>
+</ul>
+</li>
+<li>
+<p>Restore to point in time, created a new instace (new DNS endpoint) using the most recent daily backup (apply transaction log data relevant to that day)</p>
+</li>
+</ul>
+<h2 id="multi-az">Multi-AZ<a class="headerlink" href="#multi-az" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Ensures database remains available if another AZ becoms unavailable</li>
+<li>An exact copy of yout database will be created in another AZ. AWS will keep them synchronized (master-slave pattern, synchronous replication)</li>
+<li>Automatica Failover protection if one AZ goes down failover standby slave will be promoted to master</li>
+</ul>
+<h2 id="read-replicas">Read Replicas<a class="headerlink" href="#read-replicas" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Multiple copies of your database that only allow reads</li>
+<li>Intended to reduce workload of your primary database (allows writes too) and improve performance</li>
+<li>You must have automatic backups enabled to use read replicas</li>
+<li>Asynchronous replication happens between the primary RDS instance and the replicas</li>
+</ul>
+<p><img alt="Read Replicas vs Multi-AZ" src="../images/rds/rds.png" />
+<img alt="RDS CheatSheet" src="../images/rds/rds_2.png" /></p>
+<h2 id="aurora">Aurora<a class="headerlink" href="#aurora" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Fully managed Postgres or MySQL compatible database</li>
+<li>Designed by default to scale and fine-tuned to be really fast</li>
+<li>Combines the speed and availability of high-end databases + simplicity and cost-effectiveness of open source databases</li>
+</ul>
+<h2 id="scaling-and-availability-with-aurora">Scaling and availability with Aurora<a class="headerlink" href="#scaling-and-availability-with-aurora" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Storage autoscales in 10Gb increments, up to 64Tb</li>
+<li>Computing resources can scale all the way up to 32 vCPUs and 244GB of memory</li>
+<li>A minimun of 3 AZs with 2 copies of your data for each AZ<ul>
+<li>Lose up to 2 copies without affecting writeness</li>
+<li>Lose up to 3 copies without affecting readiness</li>
 </ul>
 </li>
 </ul>
-<h2 id="user-pools">User Pools<a class="headerlink" href="#user-pools" title="Permanent link">&para;</a></h2>
+<h2 id="aurora-fault-tolerance-durability">Aurora Fault tolerance &amp; durability<a class="headerlink" href="#aurora-fault-tolerance-durability" title="Permanent link">&para;</a></h2>
 <ul>
-<li>User directories used to manage the actions for web and mobile apps</li>
-<li>Use JSON Web Token to persist authentication<ul>
-<li>Sign-up</li>
-<li>Sign-in</li>
-<li>Account recovery</li>
-<li>Account verification</li>
+<li>Handled automatically by AWS</li>
+<li>Snapshot can be shared between AWS accounts</li>
+<li>Storage is self-healing: contiunously scanned for errors and repaired automatically</li>
 </ul>
-</li>
-<li>Decentralize your authentication</li>
-</ul>
-<h3 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h3>
+<h2 id="aurora-replicas">Aurora Replicas<a class="headerlink" href="#aurora-replicas" title="Permanent link">&para;</a></h2>
+<p><img alt="Aurora Replicas comparision" src="../images/rds/rds_3.png" /></p>
+<h2 id="aurora-serverless">Aurora Serverless<a class="headerlink" href="#aurora-serverless" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Password requirements</li>
-<li>Apply MFA</li>
-<li>Restrict users access (on their own, admin verification)</li>
-<li>Trigger custom logs via Lambdasafter actions</li>
+<li>Will automatically start up, shut down and scale capacity up and down based on your application's needs</li>
+<li>Pay for database storage and the database capacity and I/O consumes while it is active</li>
+<li>Ideal for new projects or projects with infrequent database usage</li>
 </ul>
-<h2 id="identity-pools">Identity Pools<a class="headerlink" href="#identity-pools" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Temporary credentials to access AWS services</li>
-<li>Actual mechanism authorizing access to the AWS resources</li>
-<li>Authentication providers (Cognito - Amazon - Facebook)</li>
-<li>Unauthenticated identities: provide a unique identifier and AWS credentials to enable access</li>
-</ul>
-<h2 id="cognito-sync">Cognito Sync<a class="headerlink" href="#cognito-sync" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Sync user data and preferences across devices</li>
-<li>Push synchronization to push updates and synchronize data</li>
-<li>Uses SNS to send notifications to all user devices when data in the cloud changes</li>
-</ul>
-<p><img alt="Cognito CheatSheet" src="../images/cognito/cognito.png" /></p>
+<p><img alt="Aurora CheatSheet" src="../images/rds/rds_4.png" /></p>
 
 
 

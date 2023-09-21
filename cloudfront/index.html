@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://dfr99.github.io/SAA-C03-docs/cognito/">
+        <link rel="canonical" href="https://dfr99.github.io/SAA-C03-docs/cloudfront/">
       
       
-        <link rel="prev" href="../cloudfront/">
+        <link rel="prev" href="../cli/">
       
       
-        <link rel="next" href="../ebs/">
+        <link rel="next" href="../cognito/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Cognito - SAA-C03 Documentation</title>
+        <title>CloudFront - SAA-C03 Documentation</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cognito" class="md-skip">
+        <a href="#cloudfront" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cognito
+              CloudFront
             
           </span>
         </div>
@@ -271,9 +271,11 @@
         
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../cloudfront/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
     
@@ -288,11 +290,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../cognito/" class="md-tabs__link">
         
   
     
@@ -599,25 +599,6 @@
       
   
   
-  
-    <li class="md-nav__item">
-      <a href="../cloudfront/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    CloudFront
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -633,7 +614,7 @@
           
   
   <span class="md-ellipsis">
-    Cognito
+    CloudFront
   </span>
   
 
@@ -644,7 +625,7 @@
         
   
   <span class="md-ellipsis">
-    Cognito
+    CloudFront
   </span>
   
 
@@ -673,49 +654,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#web-identity-federation" class="md-nav__link">
-    Web identity federation
+  <a href="#core-concepts" class="md-nav__link">
+    Core concepts
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#identity-provider" class="md-nav__link">
-    Identity Provider
+  <a href="#lambdaedge" class="md-nav__link">
+    Lambda@Edge
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#user-pools" class="md-nav__link">
-    User Pools
-  </a>
-  
-    <nav class="md-nav" aria-label="User Pools">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#attributes" class="md-nav__link">
-    Attributes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#identity-pools" class="md-nav__link">
-    Identity Pools
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cognito-sync" class="md-nav__link">
-    Cognito Sync
+  <a href="#protection" class="md-nav__link">
+    Protection
   </a>
   
 </li>
@@ -724,6 +678,25 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cognito/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cognito
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -952,59 +925,51 @@
                   
 
 
-<h1 id="cognito">Cognito<a class="headerlink" href="#cognito" title="Permanent link">&para;</a></h1>
+<h1 id="cloudfront">CloudFront<a class="headerlink" href="#cloudfront" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Dencentralized Managed Authentication</li>
-<li>Sign-up, sign-in integration for your applications</li>
-<li>Identity broker between AWS and identity provider, generating a JSON Wbe Token after successfull user authentication</li>
+<li>Content Distribution Network (CDN)<ul>
+<li>Distributed network of servers which delivers web pages and content to users based on their geographical location, the origin of the webpage and a content delivery server</li>
+<li>Used to deliver an entire website (static, dynamic and streaming content)</li>
+<li>Request are served from the nearest Edge Location for the best possible performance</li>
 </ul>
-<h2 id="web-identity-federation">Web identity federation<a class="headerlink" href="#web-identity-federation" title="Permanent link">&para;</a></h2>
-<ul>
-<li>To exchange identity and security information between an identity provider and an application</li>
+</li>
+<li>Creates cached copies of yout website at various Edge Locations around the world</li>
 </ul>
-<h2 id="identity-provider">Identity Provider<a class="headerlink" href="#identity-provider" title="Permanent link">&para;</a></h2>
+<h2 id="core-concepts">Core concepts<a class="headerlink" href="#core-concepts" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Trusted provider of your user identity that lets you use authenticate to access other services</li>
-<li>Types:<ul>
-<li>SSO (Single Sign On) -&gt; SAML (Security Assertion Markup Language)</li>
-<li>OAuth -&gt; OIDC (OpenID Connect)</li>
+<li>Origin: Location where all of original files are located</li>
+<li>Distribution: Collection of edge locations<ul>
+<li>Edge locations: AWS data centers designed to deliver services with the lowest latency possible</li>
+<li>Specified origins (S3, EC2, ELB, Route 53)</li>
+<li>Replicates copies based on your Price Class (define replica regions)</li>
+<li>Behaviours (redirections, restrict access, TTLs), cache invalidations, error pages, geolocation restrictions</li>
+<li>2 types:<ul>
+<li>Web (static website content)</li>
+<li>RTMP (streaming data)</li>
 </ul>
 </li>
 </ul>
-<h2 id="user-pools">User Pools<a class="headerlink" href="#user-pools" title="Permanent link">&para;</a></h2>
+</li>
+</ul>
+<h2 id="lambdaedge">Lambda@Edge<a class="headerlink" href="#lambdaedge" title="Permanent link">&para;</a></h2>
 <ul>
-<li>User directories used to manage the actions for web and mobile apps</li>
-<li>Use JSON Web Token to persist authentication<ul>
-<li>Sign-up</li>
-<li>Sign-in</li>
-<li>Account recovery</li>
-<li>Account verification</li>
+<li>Use Lambda function to override the behaviour of request and responses of the origin and viewer</li>
+<li>There are 4 available Lambda@Edge functions (viewer &lt;-&gt; CloudFront &lt;-&gt; Origin)<ul>
+<li>Viewer request</li>
+<li>Origin request</li>
+<li>Origin response</li>
+<li>Viewer response</li>
 </ul>
 </li>
-<li>Decentralize your authentication</li>
 </ul>
-<h3 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h3>
+<h2 id="protection">Protection<a class="headerlink" href="#protection" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Password requirements</li>
-<li>Apply MFA</li>
-<li>Restrict users access (on their own, admin verification)</li>
-<li>Trigger custom logs via Lambdasafter actions</li>
+<li>OAI (legacy) &amp; OAC: Virtual user identity that will be used to give CloudFront Distribution permission to fetch a private object.</li>
+<li>Signed URLs (OAI or OAC required): URL which provides temporary access to cached objects (S3 Presigned URL to S3)</li>
+<li>Signed Cookies (OAI or OAC required): cookie passed along with the request to CloudFront. You can provide access to multiple restricted files</li>
 </ul>
-<h2 id="identity-pools">Identity Pools<a class="headerlink" href="#identity-pools" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Temporary credentials to access AWS services</li>
-<li>Actual mechanism authorizing access to the AWS resources</li>
-<li>Authentication providers (Cognito - Amazon - Facebook)</li>
-<li>Unauthenticated identities: provide a unique identifier and AWS credentials to enable access</li>
-</ul>
-<h2 id="cognito-sync">Cognito Sync<a class="headerlink" href="#cognito-sync" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Sync user data and preferences across devices</li>
-<li>Push synchronization to push updates and synchronize data</li>
-<li>Uses SNS to send notifications to all user devices when data in the cloud changes</li>
-</ul>
-<p><img alt="Cognito CheatSheet" src="../images/cognito/cognito.png" /></p>
+<p><img alt="CloudFront Cheatsheet" src="./images.cloudfront/cloudfront.png" /></p>
 
 
 
