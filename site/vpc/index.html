@@ -1,0 +1,1458 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://dfr99.github.io/SAA-C03-docs/vpc/">
+      
+      
+        <link rel="prev" href="../snowball/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>VPC - SAA-C03 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.35e1ed30.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vpc" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SAA-C03 Documentation" class="md-header__button md-logo" aria-label="SAA-C03 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SAA-C03 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              VPC
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dfr99/SAA-C03-docs.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dfr99/SAA-C03-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Introduction
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../asg/" class="md-tabs__link">
+        
+  
+    
+  
+  ASG
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../cli/" class="md-tabs__link">
+        
+  
+    
+  
+  Programmatic access
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../cloudformation/" class="md-tabs__link">
+        
+  
+    
+  
+  CloudFormation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../cloudfront/" class="md-tabs__link">
+        
+  
+    
+  
+  CloudFront
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../cloudwatch/" class="md-tabs__link">
+        
+  
+    
+  
+  CloudWatch
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../cognito/" class="md-tabs__link">
+        
+  
+    
+  
+  Cognito
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../dynamodb/" class="md-tabs__link">
+        
+  
+    
+  
+  DynamoDB
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ebs/" class="md-tabs__link">
+        
+  
+    
+  
+  EBS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ec2/" class="md-tabs__link">
+        
+  
+    
+  
+  EC2
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../efs/" class="md-tabs__link">
+        
+  
+    
+  
+  EFS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../elb/" class="md-tabs__link">
+        
+  
+    
+  
+  ELB
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../iam/" class="md-tabs__link">
+        
+  
+    
+  
+  IAM
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../rds/" class="md-tabs__link">
+        
+  
+    
+  
+  RDS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../redshift/" class="md-tabs__link">
+        
+  
+    
+  
+  Redshift
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../route53/" class="md-tabs__link">
+        
+  
+    
+  
+  Route53
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../s3/" class="md-tabs__link">
+        
+  
+    
+  
+  S3
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../snowball/" class="md-tabs__link">
+        
+  
+    
+  
+  Snowball
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  VPC
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SAA-C03 Documentation" class="md-nav__button md-logo" aria-label="SAA-C03 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    SAA-C03 Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dfr99/SAA-C03-docs.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dfr99/SAA-C03-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ASG
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmatic access
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloudformation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CloudFormation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloudfront/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CloudFront
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloudwatch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CloudWatch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cognito/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cognito
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamodb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DynamoDB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ebs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EBS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ec2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EC2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../efs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EFS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../elb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ELB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iam/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IAM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rds/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RDS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../redshift/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redshift
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../route53/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Route53
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../s3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    S3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snowball/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snowball
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    VPC
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    VPC
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    Key features
+  </a>
+  
+    <nav class="md-nav" aria-label="Key features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pricing" class="md-nav__link">
+    Pricing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-vpc" class="md-nav__link">
+    Default VPC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-everywhere-ip-00000" class="md-nav__link">
+    Default Everywhere IP (0.0.0.0/0)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bastion-deprecated" class="md-nav__link">
+    Bastion (deprecated)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direct-connect" class="md-nav__link">
+    Direct Connect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flow-logs" class="md-nav__link">
+    Flow Logs
+  </a>
+  
+    <nav class="md-nav" aria-label="Flow Logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-breakdown" class="md-nav__link">
+    Log Breakdown
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-components" class="md-nav__link">
+    Core components
+  </a>
+  
+    <nav class="md-nav" aria-label="Core components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#internet-gateway-igw" class="md-nav__link">
+    Internet Gateway (IGW)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-tables" class="md-nav__link">
+    Routing tables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-groups" class="md-nav__link">
+    Security Groups
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subnets" class="md-nav__link">
+    Subnets
+  </a>
+  
+    <nav class="md-nav" aria-label="Subnets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#public-subnet" class="md-nav__link">
+    Public subnet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#private-subnet" class="md-nav__link">
+    Private subnet
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-private-gateway-vpn-gateway" class="md-nav__link">
+    Virtual Private Gateway (VPN Gateway)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat-gateway" class="md-nav__link">
+    NAT gateway
+  </a>
+  
+    <nav class="md-nav" aria-label="NAT gateway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nat-instances-legacy" class="md-nav__link">
+    NAT Instances (legacy)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vpc-endpoints" class="md-nav__link">
+    VPC Endpoints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-endpoints" class="md-nav__link">
+    Interface Endpoints
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pricing_1" class="md-nav__link">
+    Pricing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gateway-endpoints" class="md-nav__link">
+    Gateway Endpoints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vpc-peering" class="md-nav__link">
+    VPC Peering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-access-control-list-nacls" class="md-nav__link">
+    Network Access Control List (NACLs)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="vpc">VPC<a class="headerlink" href="#vpc" title="Permanent link">&para;</a></h1>
+<p>Virtual Private Cloud</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Logically isolated section of the AWS Cloud where you can launch AWS resources in a virtual network defined by you, giving you complete control over your virtual networking environment ("personal data center")</p>
+<h2 id="key-features">Key features<a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Region specific, 5 VPCs per region maximum</li>
+<li>Each region comes with a default VPC</li>
+<li>200 subnets by VPC maximum</li>
+<li>VPC allows IPv4 and IPv6 CIDR Blocks (VPC address)</li>
+<li>DNS resolution enabled by default</li>
+<li>DNS hostnames to the instances (disabled by default)</li>
+<li>Default tenancy or dedicated one (dedicated host, more expensive)</li>
+</ul>
+<h3 id="pricing">Pricing<a class="headerlink" href="#pricing" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Free:<ul>
+<li>VPCs</li>
+<li>Route tables</li>
+<li>NACLs</li>
+<li>IGWs</li>
+<li>SGs</li>
+<li>Subnets</li>
+<li>VPC Peering</li>
+</ul>
+</li>
+<li>Costs:<ul>
+<li>NAT Gateways</li>
+<li>VPC Endpoints</li>
+<li>VPN Gateway</li>
+<li>Customer Gateway</li>
+</ul>
+</li>
+</ul>
+<h2 id="default-vpc">Default VPC<a class="headerlink" href="#default-vpc" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The goal is allow you to deploy instances immediately.</li>
+<li>IPv4 CIDR block -&gt; 172.31.0.0/16</li>
+<li>/20-sized subnet for each Availability Zone (AZ)</li>
+<li>IGW</li>
+<li>Default SG</li>
+<li>Default NACL</li>
+<li>Default DHCP options set for yout AWS account with your default VPC</li>
+<li>Default route table</li>
+</ul>
+<h2 id="default-everywhere-ip-00000">Default Everywhere IP (0.0.0.0/0)<a class="headerlink" href="#default-everywhere-ip-00000" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Represents all possible IP addresses</li>
+<li>In a IGW route table -&gt; allow all internet access</li>
+<li>In a SG inbound rule -&gt; allow all traffic from internet to our resources</li>
+</ul>
+<h2 id="bastion-deprecated">Bastion (deprecated)<a class="headerlink" href="#bastion-deprecated" title="Permanent link">&para;</a></h2>
+<ul>
+<li>EC2 instance which are security harden</li>
+<li>Used to access resources via SSH or RDP that are in a private subnet</li>
+<li>System Manager's Session Manager replaces the need for Bastions</li>
+<li><a href="https://aws.amazon.com/marketplace/pp/prodview-hl2sry7k37mgq">Guacamole Bastion Host</a></li>
+</ul>
+<h2 id="direct-connect">Direct Connect<a class="headerlink" href="#direct-connect" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Dedicated network connections from on-premises to AWS</li>
+<li>Very fast network (from 50Mbps to 100Gbps)</li>
+<li>Great for high traffic networks. Reliable and secure</li>
+</ul>
+<h2 id="flow-logs">Flow Logs<a class="headerlink" href="#flow-logs" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Allow to capture traffic information in-and-out of network interfaces within your VPC</li>
+<li>Created for VPC, subnets and network interfaces</li>
+<li>Log data is stores in CloudWatch Logs, where it can be viewed in detail</li>
+</ul>
+<h3 id="log-breakdown">Log Breakdown<a class="headerlink" href="#log-breakdown" title="Permanent link">&para;</a></h3>
+<p><img alt="Log Breakdown" src="../images/vpc/vpc_2.png" />
+<img alt="Flow Logs CheatSheet" src="../images/vpc/vpc_3.png" /></p>
+<h2 id="core-components">Core components<a class="headerlink" href="#core-components" title="Permanent link">&para;</a></h2>
+<p>Combining these components and services is what makes up your VPC</p>
+<h3 id="internet-gateway-igw">Internet Gateway (IGW)<a class="headerlink" href="#internet-gateway-igw" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Allows VPCs to access to the internet</li>
+<li>Provides a target in VPC route tables for internet-routable traffic</li>
+<li>Perform NAT for instances that have been assigned public IPv4 addresses</li>
+<li>It is required to add a route to the IGW and set the destination to be the default Everywhere IP (0.0.0.0/0)</li>
+</ul>
+<h3 id="routing-tables">Routing tables<a class="headerlink" href="#routing-tables" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Used to determine where network traffic is directed</li>
+<li>Each subent in your VPC <strong>MUST</strong> be associated with a route table and <strong>JUST</strong> one<ul>
+<li>But multiple subnets can be associated with one single route table</li>
+</ul>
+</li>
+</ul>
+<h3 id="security-groups">Security Groups<a class="headerlink" href="#security-groups" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Instance-level virtual firewall that controls inbound and outbound traffic EC2 instances</li>
+<li>All traffic is blocked by default, rules only allow traffic.</li>
+<li>Protocol + Port Range + Source IP + Description (optional)</li>
+<li>Instances can belong to multiple Security Groups and Security Groupds can contain multiple EC2 instances</li>
+<li>Security group rules are permissive.</li>
+<li>Use case: allow a IP range, a specific IP, another security group...</li>
+<li>Stateful: if traffic is allowed inbound it is also allowed outbound</li>
+<li>Changes take effect immediately.</li>
+<li>You cannot block specific IP addresses (see <a href="#Network-Access-Control-List-(NACLs)">Network Access Control List (NACLs)</a></li>
+<li>Limitations: <ul>
+<li>Up to 1000 SGs per Region (default is 2500)</li>
+<li>60 inbounds and 60 outbound rules per SG</li>
+<li>16 SGs per Elastic Network interface (ENI, default is 5)</li>
+</ul>
+</li>
+</ul>
+<h3 id="subnets">Subnets<a class="headerlink" href="#subnets" title="Permanent link">&para;</a></h3>
+<p>Private by default (auto-assign public IPv4 address disabled)</p>
+<h4 id="public-subnet">Public subnet<a class="headerlink" href="#public-subnet" title="Permanent link">&para;</a></h4>
+<h4 id="private-subnet">Private subnet<a class="headerlink" href="#private-subnet" title="Permanent link">&para;</a></h4>
+<h3 id="virtual-private-gateway-vpn-gateway">Virtual Private Gateway (VPN Gateway)<a class="headerlink" href="#virtual-private-gateway-vpn-gateway" title="Permanent link">&para;</a></h3>
+<h3 id="nat-gateway">NAT gateway<a class="headerlink" href="#nat-gateway" title="Permanent link">&para;</a></h3>
+<ul>
+<li>NAT instances 100% managed by AWS</li>
+<li>Re-mapping one IP address space into another</li>
+<li>Use case: Give access to the internet to a Private Network (remap private IPs)</li>
+<li>Redundant instances within the selected AZ</li>
+<li>Automatically assigned with a public address</li>
+<li>Route tables for the NAT Gateway MUST be updated by administrator</li>
+<li>1 NAT gateway per AZ</li>
+<li>Starts at 5 Gbps and scales up to 45Gbps</li>
+</ul>
+<h4 id="nat-instances-legacy">NAT Instances (legacy)<a class="headerlink" href="#nat-instances-legacy" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Individual EC2 instance on public subnet to give access to the internet (MUST exist in a public subnet)</li>
+<li>MUST disable source and destination network checks</li>
+<li>MUST have a route out of the private subnet to the NAT instance</li>
+<li>NAT instance size determinet how much traffic can handle</li>
+<li>High availability can be achieved using:<ul>
+<li>Autoscaling Groups</li>
+<li>Multiple subnets in different AZs-</li>
+<li>Automatic failover</li>
+</ul>
+</li>
+<li>Community AMIs exist to launch NAT instances</li>
+<li>Should not be used as Bastions</li>
+</ul>
+<h3 id="vpc-endpoints">VPC Endpoints<a class="headerlink" href="#vpc-endpoints" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Allows you to privately connect VPC with other AWS services<ul>
+<li>Instances in the VPC do not require a public IP address to communicate with service resources</li>
+<li>Traffic between your VPC and other services does not leave the AWS network</li>
+<li>Allow reliable and secure communication between services and instances</li>
+</ul>
+</li>
+<li>Horizontally scalled, redundant and highly available VPC component</li>
+<li>2 types: Interface Endpoints and Gateway Endpoints</li>
+</ul>
+<h3 id="interface-endpoints">Interface Endpoints<a class="headerlink" href="#interface-endpoints" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Elastic Network Interfaces (ENI) with private IP address</li>
+<li>Uses AWS PowerLink</li>
+<li>Supports multiple services</li>
+</ul>
+<h4 id="pricing_1">Pricing<a class="headerlink" href="#pricing_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Internet endpoint per AZ ($/hour): 0.01 -&gt; 24/7 ~7.5$</li>
+<li>0.01$/GB data processed</li>
+</ul>
+<h3 id="gateway-endpoints">Gateway Endpoints<a class="headerlink" href="#gateway-endpoints" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Gateway that is a target for a specific route in yout route table.</li>
+<li>It is FREE</li>
+<li>Only support S3 and DynamoDB</li>
+</ul>
+<p><img alt="VPC Endpoints CheatSheet" src="../images/vpc/vpc.png" /></p>
+<h3 id="vpc-peering">VPC Peering<a class="headerlink" href="#vpc-peering" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Allows you to connect VPC between them over a direct network route using private IP addresses</li>
+<li>Instances on peered VPC behave just like they are on the same network</li>
+<li>Connects VPCS same or differents AWS accounts and/or regions</li>
+<li>Star configuration: 1 central VPC, the rest around the central one<ul>
+<li>No Transitive Peering -&gt; One to One to connect immediate VPC</li>
+</ul>
+</li>
+<li>No Overlapping CIDR Blocks</li>
+</ul>
+<h3 id="network-access-control-list-nacls">Network Access Control List (NACLs)<a class="headerlink" href="#network-access-control-list-nacls" title="Permanent link">&para;</a></h3>
+<ul>
+<li>VPCs are automatically given a default NACL which allows all outbound and inbound traffic</li>
+<li>Layer of security, acts like a firewall at subnet level</li>
+<li>Denies all traffic by default</li>
+<li>Stateless: any allowed inbound traffic is also allowed outbound</li>
+<li>Subnets an only belong to a single NACL, but a same NACLs can be associated to multiple subnets</li>
+<li>Seems like Linux iptables, allowing or denying incoming and outcoming subnet traffic</li>
+<li>Rule number -&gt; evaluation order from lowest (0) to highest (32766). AWS recommends to work in 10 or 100 increments to deal with new rules addition.</li>
+<li>Use case: block by IP, additional protection in case Security Groups SSH port wass left open</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "toc.follow", "toc.integrate", "search.highlight", "search.suggest", "search.share", "announce.dismiss", {"git-revision-date": {"enabled_if_env": "CI"}}, {"git-revision-date-localized": {"enable_creation_date": true, "fallback_to_build_date": true, "type": "date"}}], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+    
+  </body>
+</html>

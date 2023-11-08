@@ -1,0 +1,342 @@
+### Responses to the AWS SAA-C03 Exam: 100 Practice Questions | Detailed Explanations @Peace Of Code
+### https://www.youtube.com/watch?v=Wee_F8_k8s4
+### https://www.youtube.com/watch?v=ZbUgLRV1kqI
+
+1 - A
+2 - C
+3 - A
+4 - A
+5 - C
+6 - B
+7 - D
+8 - B
+9 - B
+10 - B
+11 - A
+12 - A -> Edge Locations: CloudFront or Global Accelerator. 1 of them, not both
+13 - A
+14 - C 
+15 - C (Fallo, respondeches a A): Traffic flow inspection and traffic filtering == AWS Network Firewall
+16 - B (Fallo, respondeches a A) -> Different concepts IAM roles and QuickSight users and groups 
+17 - A
+18 - A & B
+19 - D -> ALB (layer 7, application); NLB (layer 4, network layer, IP); GLB (inspection)
+20 - D (Fallo, respondeches a A) -> (volume size of 16TiB or less, volumes provisioned with performance up to 64000 IOPS and 1000MiB/s)
+21 - D (Fallo, respondeches a A) -> solo a parte estática a S3, non toda a web
+22 - B
+23 - B
+24 - B
+25 - D
+
+##############################################################################################################################################################
+
+26 - A -> CloudWatch (Monitoring); CloudTrail (Tracing, record API calls); AWS Config (Configuration)
+27 - A
+28 - B -> one-way for only authentication; two-way for authentication and user and group management
+29 - A (Fallo, respondeches C) -> lowest latency + failover, both are provisioned with the Load Balancer
+30 - C
+31 - A
+32 - B -> static website hosting (HTML, CSS, images and client-side JS)
+33 - C
+34 - B -> CloudWatch (Monitoring); CloudTrail (Tracing, record API calls)
+35 - D
+36 - B -> KMS key, multipe regions, you want to work with the same KMS key -> Multi-Region Keys
+37 - B
+38 - C -> decrease latency, CloudFront distributions (Edge Locations)
+39 - A -> database storage performance is the problem -> change storage type
+40 - A ->  Kinesis Data Stream (real-time); Kinesis Data Firehose (near real-time, deliver only in S3, RedShift, OpenSearch)
+41 - B -> AppFlow, communication between apps (SaaS)
+42 - C
+43 - B
+44 - A & B
+45 - B & E
+46 - B (Fallo, respondeches a D) -> Amazon Macie, manage Personally Identifiable Information (PII) on S3 objects
+47 - D
+48 - D
+49 - B
+50 - D (Fallo, respondeches a B) -> Patch Manager, OS-level patches and bigger patches
+
+Mirarme Kinesis, Amazon Macie servicios de protección de red e de cost management
+
+##############################################################################################################################################################
+
+51 - B & D -> Glue: multiple data sources, if there is only one data spurce, use Lambda, you do not need to integrate multiple data sources
+52 - C
+53 - C -> S3 Object Lock: avoid delete objects, including admin and root users
+54 - C -> Windows file shares == Amazon FSx for Windows File Server
+55 - C
+56 - C
+57 - B
+58 - C
+59 - D (Fallo, respondeches a A) -> Kinesis == data streaming, real-time (KDS) or near real-time (KDF)
+60 - C
+61 - C
+62 - D -> ACM just to import the certificate, not for issue it
+63 - A
+64 - D
+65 - C -> Amazon Textract (extract printed text, handwriting and data from any document) + Amazon Comprehend (NLP, natural-language processing) Medical (specific for doctor notes or prescripctions)
+66 - C -> Critical business data, immediate access = S3 Standard Access, Infrequent Access to save money. S3 Glacier Instant Retrieval could be an option
+67 - D (Fallo, respondeches a C) -> Visibility Timeout to avoid duplicates on the queue due to microservice is busy
+68 - A -> best connection between on-premises to AWS = AWS Direct Connect
+69 - B -> RDS Proxy: handle simultaneously multiple connections efficiently
+70 - C
+71 - B -> Recovery Point Objective (RPO, how much data can you lose, in tiem) and Recovery Time Objective (RTO, maximum time iwhich your system will be online). DynamoDB global tables: without RPO, just for high availability
+72 - D
+73 - C & D (Fallo, respondeches C & E) -> From bastion to app EC2 is just required to allow private IP on app EC2 security group
+74 - A & C
+75 - A -> overload on requests = add queue = Amazon SQS; RESTfull service = API Gateway + AWS Lambda
+
+##############################################################################################################################################################
+
+76 - B
+77 - C -> REST APIs = API Gateway
+78 - B
+79 - A
+80 - B (Fallo, respondeches a C) -> you don't want to create a new KMS key 
+81 - C -> "app is loosely couple" = Amazon SQS
+82 - B (Fallo, respondeches a D) -> EventBridge does not detect anything itself
+83 - C -> CloudFront to reach new users on different location (Edge Locations)
+84 - B
+85 - A 
+86 - A
+87 - D
+88 - A (Fallo, respondeches a C) S3 Requester Pays feature -> object puller user is charged with data transfer costs
+89 - A
+90 - B
+91 - A
+92 - A & C
+93 - C (Fallo, respondeches a B) -> stand by instance to use the environment without delay
+94 - C
+95 - D -> it has no sense to reduce computational resources to half
+96 - C -> explicit allow before deny in IAM policy will prevail. 10.100.100.1 cannot be used (VPC reserves 4 first directions and the last one)
+97 - D
+98 - C -> visibility timeout to avoid multiple execution of the same SQS queue item
+99 - D -> AWS FSx for Lustre (file system for HPC)
+100 - C (Fallo) -> Store in S3 >>> Store in EBS
+
+##############################################################################################################################################################
+
+101 - A -> private subnets with EC2 instances that require to access to the internet = NAT Gateways
+102 - B & E -> you do not have to launch the EC2 instance in the same AZ as the EFS
+103 - A -> AWS Glue Job Bookmark -> tracking processed data
+104 - A & C
+105 - D -> lambda function: principle of least privilege + services that mention on question
+106 - D (Fallo , respondeches a B) -> rotation keys + track key usage = AWS KMS keys
+107 - B
+108 - A
+109 - D
+110 - C & D
+111 - D
+112 - A
+113 - C
+114 - C
+115 - C
+116 - A & D -> content management system (CMS) = CloudFront
+117 - A -> CloudWatch Logs log group -> configure subscription to stream the logs
+118 - D
+119 - B -> Firewall Manager = SQL injection + X-site scripting
+120 - B
+121 - A -> you cannot encrypt database after it is created
+122 - B
+123 - D
+124 - A -> Spot instances is the cheapest
+125 - A & D
+
+##############################################################################################################################################################
+
+126 - B
+127 - D -> EBS: data will not be deleted if EC2 instance is deleted .EC2 instance storage for maximum IOPS
+128 - B -> Start and Stop, tolerate disruptions = Spot Instances. Containers = ECS, Fargate, EKS...
+129 - A & E
+130 - B -> CPU utilization in Auto Scaling = target tracking
+131 - D -> OAI (Origin Access Identity) is a CloudFront legacy feature, use OAC (Origin Access Control) instead
+132 - A -> globally distribution (website, files...) = CloudFront
+133 - C -> maintain access to the database's underlying operating system = RDS Custom
+134 - A
+135 - D -> PrivateLink = Establish connectivity between VPCs and AWS services without exposing data to the internet
+136 - A & C -> Database Migration: Ongoing Replication Task + replication server
+137 - B
+138 - B
+139 - D -> S3 event notifications only for Lambda, DynamoDB, OpenSearch
+140 - A & C -> Predictable utilization of computational resources = Compute Savings Plan. Instances can be interrupted at any time = Spot instances
+141 - A
+142 - C -> Layer 4 traffic + low latency + static IP addresses = Global Accelerator
+143 - D -> containarizion = ECS
+144 - B -> Aurora read requests -> read replicas
+145 - D -> 5XX on application = server overloaded = Auto Scaling Group. Spot Fleet -> reduce expenses
+146 - B
+147 - B
+148 - D
+149 - A
+150 - A -> alarm of an alarm = CloudWatch composite alarms
+
+##############################################################################################################################################################
+
+151 - A & C -> AWS Control Tower to deny internet access and all AWS Regions except the selected ones. AWS Organizations to configure SCPs to prevent VPCs from gaining internet access and deny access to all AWS Regions except the selected ones
+152 - D
+153 - B -> it can be moved to a storage cheaper than S3 Standard IA. Requirement for S3 Intelligent-Tiering: object size >= 128 KB
+154 - B -> Write Once Read Many (WORM) for S3, with restriction (no modify nor delete actions) -> compliance mode. Compliance vs. governance -> object completely unalterable vs. alterable if you are allowed (get permissions)
+155 - C
+156 - A & E
+157 - D & E -> Automated backups cannot be retained so much time (e.g 5 years)
+158 - A
+159 - A & C
+160 - C
+161 - B
+162 - A -> HPC persistence: FSx for Lustre
+163 - A
+164 - C
+165 - D
+166 - D
+167 - D
+168 - D -> SCP: manage access across all accounts on a organization
+169 - C
+170 - C -> WAF allows to restrict access from specific countries
+171 - B
+172 - C -> CloudFront field-level encryption profile allows users to securely upload sensitive data to the web servers
+173 - B
+174 - B
+175 - B -> large number of open connections: RDS Proxy
+
+##############################################################################################################################################################
+
+176 - A
+177 - B -> DynamoDB read issues: DAX; RDS ¡Cluster! read issues: read replicas
+178 - A
+179 - A
+180 - B & C -> Layer 7 attacks (CORS, SQL inyection): WAF on ALB, API Gateway, CloudFornt; lever 4 attacks (DDoS): AWS Shield on NLB
+181 - A -> producer/consumer with a buffer in between -> SQS
+182 - B
+183 - A
+184 - A
+185 - B
+186 - B
+187 - A & D
+188 - A -> AWS Transfer Family -> SFTP, FTPS, FTP servers
+189 - B & D -> Amazon S3 managed encryption keys cannot be rotated automatically, use KMS instead
+190 - B
+191 - A
+192 - B & E 
+193 - A
+194 - A
+195 - C
+196 - D -> DynamoDB TTL to delete table entries after older than TTL value
+197 - B & E
+198 - D
+199 - B (Fallo, respondeches a D) -> Transcribe: multiple speaker recognition. Rekognition: images and videos. Translate: translate languages
+200 - D -> Amazon Cognito user pool to keep a list of all the authenticated users, to give access to specified resources
+
+##############################################################################################################################################################
+
+201 - B -> Amazon Connect: flujo cliente/proveedor. Amazon Pinpoint: comunicación multicanal (e-mail, SMS...)
+202 - A (Fallo, respondeches a B) -> SSE-S3 rotate keys automatically every 1 year
+203 - D
+204 - C -> AWS Lake Formation -> create a datalake and get centralized access to the data
+205 - C
+206 - C
+207 - D 
+208 - B -> private access from yout VPC to S3 or DynamoDB = gateway VPC endpoint in the same AZ
+209 - A -> sometimes ElastiCache is not preferred because code changes are required. Session affinity (sticky session) for ALB is using to use the same EC2 for the same user requests
+210 - D -> producer/consumer with a buffer between -> SQS
+211 - D -> AWS Resource Groups Tag Editor: service that lets you manage and automate tasks on large numbers of resources at one time, using tags
+212 - A
+213 - A -> WAF: layer 7 attacks (X-site scripting, SQL inyection). Shield/Shield Advanced: DDoS
+214 - B -> AWS Glue: transformation jobs with Apache Parquet outputs
+215 - A
+216 - B -> S3 inventory to get a list of your S3 objects
+217 - A
+218 - A & E -> ACL: inbound 443 + outbound ephemeral ports (Amazon Linux -> 32768-65535)
+219 - D
+220 - B
+221 - D
+222 - A (Fallo, respondeches a D porque eres bobo) -> access to an account through another one without IAM access to the last one: IAM role in the second account to delegate access todo the first account IAM role
+223 - A & D
+224 - C & E -> Amazon Route 53 routing policies: failover (configure active-passive failover), weighted (route traffic to multiple resources in proportions that you specify), multivalue answer (Use when you want Route 53 to respond to DNS queries with up to eight healthy records selected at random)
+225 - B
+
+##############################################################################################################################################################
+
+226 - A & E
+227 - B
+228 - C
+229 - A
+230 - C
+231 - B -> VPC peering connection: connects directly two VPCs between them from the same AWS account or between different AWS accounts
+232 - C
+233 - A & B
+234 - C 
+235 - D -> DataSync does not allow to database migration and data synchronization. AWS Schema Conversion Tool (SCT): change database schema (you want to modify database engine). Use memory-optimized replication instances if you want to use in-memory databases, like MySQL
+236 - A
+237 - C -> Cost Explorer: future usage cost. Budgets: thresholds based on frequency, service type
+238 - A
+239 - A
+240 - D
+241 - C
+242 - C
+243 - A -> AWS Storage Gateway to provide on-premises access top virtually unlimited cloud storage
+244 - C
+245 - D ??? Rare question
+246 - D
+247 - C & E
+248 - D
+249 - D -> SMB (Windows) clients == Amazon FSx for Windows File Server
+250 - D
+
+##############################################################################################################################################################
+
+251 - B -> NAT Gateway to connect to internet from private subnet
+252 - A
+253 - C
+254 - B -> At network layer, the principle of least privilege is applied using security group IDs on ingress and egress security groups rules
+255 - D
+256 - B & D
+257 - A
+258 - D
+259 - A
+260 - D (Fallo, respondeches a A) -> IAM: solo gestión de recursos de AWS.
+261 - A & C -> A common use case of Lambda@Edge is to use functions to customize the content that your CloudFront distribution delivers to your end users
+262 - A
+263 - A & D
+264 - D -> ALB routes the traffic to the healthy instances
+265 - C
+266 - A (Fallo, respondeches a B) -> CloudFront: CDN (content delivery network). AWS Global Accelerator: high performance, near real-time or use more protocols than HTTP(S)
+267 - D -> Kinesis Data Firehose (near real-time)
+268 - B -> Implement a cache implies code changes. RDS Proxy not. Also, we choose between this options because Read Replica option is not available
+269 - C
+270 - A
+271 - C -> Scheduled scaling: when you know when you want the specific resource
+272 - B
+273 - B
+274 - B
+275 - C (Fallo, respondeches a C) -> Target tracking action at a lower CPU, and decrease the cooldown period (reduce time of spin up and scales before)
+
+##############################################################################################################################################################
+
+276 - 
+277 - 
+278 - 
+279 - 
+280 - 
+281 - 
+282 - 
+283 - 
+284 - 
+285 - 
+286 - 
+287 - 
+288 - 
+289 - 
+290 - 
+291 - 
+292 - 
+293 - 
+294 - 
+295 - 
+296 - 
+297 - 
+298 - 
+299 -
+300 -
+
+##############################################################################################################################################################
+
